@@ -44,15 +44,15 @@ return (
         <h2>スキル</h2>
         <ul>
             <li>Python</li>
-            <p>基本的なコーディングができます。Streamlitを用いたwebアプリケーションの開発も可能。</p>
-            <li>HTML/CSS</li>
-            <p>簡単なwebページをHTMLにて作成可能、CSSは使用可能だがまだ勉強中。</p>
-            <li>JavaScript</li>
-            <p>HTML/CSSに付随して学習。ﾏﾀﾞﾂｶｴﾅｲ</p>
-            <li>React</li>
-            <p>HTML/CSSが書けるので最低限使用可能。しかしまだまだ勉強不足</p>
+            <p>基本的なコーディングができる。Streamlitを用いたwebアプリケーションの開発が得意。</p>
             <li>SQL</li>
-            <p>基本的なデータベースの操作が可能。基本SQliteを使用。</p>
+            <p>基本SQliteを使用(PostgreSQLも使用可能)。基本的なデータベースの操作ができる。</p>
+            <li>HTML/CSS</li>
+            <p>簡単なwebページをHTMLにて作成可能。CSSは使用可能だがまだ勉強中。</p>
+            <li>JavaScript</li>
+            <p>HTML/CSSに付随して学習。ﾏﾀﾞﾂｶｴﾅｲ。</p>
+            <li>React</li>
+            <p>Webアプリケーションを作成しながら勉強中。</p>
         </ul>
         </section>
 
