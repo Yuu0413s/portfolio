@@ -59,6 +59,8 @@ return (
         <section id="hack">
         <h2>ハッカソン・コンペティション参加経歴</h2>
         <ul>
+            <li>SMBC Group GREEN×DATA Challenge 2025</li>
+            <p>2025/06/02~06/30に開催。「電力の価格予測にチャレンジしよう！」をテーマに機械学習を用いて電力価格予測を行い、その精度を競うコンペティション。</p>
         </ul>
         </section>
 
