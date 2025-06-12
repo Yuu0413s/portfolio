@@ -75,7 +75,8 @@ return (
         <ul>
             <li>GMail : y.shibata0820@gmail.com</li>
             <li><a href="https://github.com/Yuu0413" target="_blank" rel="noopener noreferrer">Github</a></li>
-            <li><a href="https://www.wantedly.com/id/yuu_0413" target="_blank" rel="noopener noreferrer">Wantedly</a></li>
+            <li><a href="https://note.com/yuu_0413" target="_blank" rel="noopener noreferrer">note</a></li>
+            <li><a href="https://qiita.com/yuu_0413" target="_blank" rel="noopener noreferrer">Qiita</a></li>
         </ul>
         </section>
 
