@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import icon from './icon.jpg';
 
 function App() {
