@@ -1,0 +1,229 @@
+/* App.css */
+
+/* 全体のスタイル */
+body {
+  font-family: sans-serif; /* フォントファミリーの例 */
+line-height: 1.6;
+margin: 0;
+padding: 0;
+  background-color: #f4f4f4; /* 背景色の例 */
+  color: #333; /* 基本の文字色の例 */
+}
+
+.Portfolio {
+  max-width: 960px; /* ポートフォリオ全体の最大幅 */
+  margin: 20px auto; /* 中央寄せ */
+padding: 20px;
+  background-color: #fff; /* ポートフォリオの背景色 */
+border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ちょっとした影 */
+}
+
+/* トップセクション (ヘッダー) */
+top {
+  display: block; /* <top> は標準HTML要素ではないため、ブロック要素として定義 */
+text-align: center;
+padding-bottom: 20px;
+  border-bottom: 1px solid #eee; /* 区切り線 */
+margin-bottom: 30px;
+}
+
+top h1 {
+color: #333;
+margin-bottom: 10px;
+}
+
+top p {
+font-size: 1.1em;
+color: #666;
+}
+
+/* ナビゲーション */
+nav ul { /* nav 直下の ul を想定 (JSXでは ul がないが、通常 nav の子には ul が来るため) */
+list-style: none;
+padding: 0;
+  display: flex; /* 横並びにする場合 */
+  justify-content: center; /* 中央寄せ */
+  gap: 20px; /* 各メニュー間のスペース */
+}
+
+nav li {
+  display: inline-block; /* li要素を横並びにする場合 (ul に flex を使わない場合) */
+  margin-right: 20px; /* 各メニュー間のスペース (ul に gap を使わない場合) */
+}
+
+nav a {
+text-decoration: none;
+  color: #007bff; /* リンクの色 */
+font-weight: bold;
+}
+
+nav a:hover {
+text-decoration: underline;
+  color: #0056b3; /* ホバー時のリンクの色 */
+}
+
+/* メインコンテンツ */
+main {
+padding: 0 15px;
+}
+
+/* 各セクション */
+section {
+margin-bottom: 40px;
+padding: 20px;
+  background-color: #f9f9f9; /* セクションごとの背景色 */
+border-radius: 5px;
+}
+
+section h2 {
+color: #333;
+  border-bottom: 2px solid #007bff; /* 見出しのアクセント */
+padding-bottom: 10px;
+margin-bottom: 20px;
+}
+
+/* 自己紹介セクション */
+#About ul {
+list-style: none;
+padding: 0;
+}
+
+.profile-icon {
+  display: block; /* 画像をブロック要素にして中央寄せしやすくする */
+width: 150px;
+height: 150px;
+  border-radius: 50%; /* 円形にする */
+  object-fit: cover; /* 画像のアスペクト比を保ちつつトリミング */
+  margin: 0 auto 20px auto; /* 上下左右中央寄せ */
+  border: 3px solid #007bff; /* アイコンの枠線 */
+}
+
+#About blockquote {
+margin: 0;
+padding: 15px;
+background-color: #e9ecef;
+border-left: 5px solid #007bff;
+font-style: italic;
+color: #555;
+}
+
+#About blockquote strong {
+display: block;
+margin-bottom: 10px;
+  font-style: normal; /* strong タグのイタリックを解除 */
+font-weight: bold;
+color: #333;
+}
+
+#About blockquote p {
+margin-bottom: 8px;
+  font-style: normal; /* p タグのイタリックを解除 */
+}
+
+/* 経歴セクション */
+#career ul {
+list-style: none;
+padding: 0;
+}
+
+#career ul p {
+margin-bottom: 8px;
+padding-left: 15px;
+border-left: 3px solid #ccc;
+}
+
+/* スキルセクション */
+#skills ul {
+list-style: none;
+padding: 0;
+}
+
+#skills li {
+font-weight: bold;
+color: #007bff;
+margin-top: 15px;
+}
+
+#skills ul p { /* li の直下ではなく、ul の直下の p (JSXの構造に合わせる) */
+  margin-left: 20px; /* liからのインデント */
+margin-bottom: 10px;
+font-style: italic;
+color: #666;
+}
+
+/* ハッカソン・インターンシップセクション (共通のスタイルも可能) */
+#hack ul, #interns ul {
+  list-style: disc; /* もし項目が増えたら箇条書きが見やすいかも */
+padding-left: 20px;
+}
+
+#hack ul:empty::before,
+#interns ul:empty::before {
+  content: "現在、記載できる経歴はありません。"; /* 空の場合の表示 */
+color: #888;
+font-style: italic;
+}
+
+
+/* リンクセクション */
+#links ul {
+list-style: none;
+padding: 0;
+}
+
+#links li {
+margin-bottom: 10px;
+}
+
+#links a {
+text-decoration: none;
+color: #007bff;
+}
+
+#links a:hover {
+text-decoration: underline;
+color: #0056b3;
+}
+
+/* フッター */
+footer {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+  background-color: #333; /* フッターの背景色 */
+  color: #fff; /* フッターの文字色 */
+  border-top-left-radius: 8px; /* 全体の .Portfolio の角丸と合わせる場合 */
+border-top-right-radius: 8px;
+}
+
+footer p {
+margin: 0;
+}
+
+/* レスポンシブ対応の例 (必要であれば) */
+@media (max-width: 768px) {
+.Portfolio {
+    margin: 10px;
+    padding: 15px;
+}
+
+nav ul {
+    flex-direction: column; /* 画面が小さい場合は縦並び */
+    gap: 10px;
+}
+
+nav li {
+    margin-right: 0;
+    margin-bottom: 10px; /* 縦並びの場合のスペース */
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+}
+}
+.profile-icon {
+width: 200px;
+height: 200px;
+}
