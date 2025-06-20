@@ -1,30 +1,26 @@
-/* App.css */
-
-/* 全体のスタイル */
 body {
-  font-family: sans-serif; /* フォントファミリーの例 */
+  font-family: sans-serif;
 line-height: 1.6;
 margin: 0;
 padding: 0;
-  background-color: #f4f4f4; /* 背景色の例 */
-  color: #333; /* 基本の文字色の例 */
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 .Portfolio {
-  max-width: 960px; /* ポートフォリオ全体の最大幅 */
-  margin: 20px auto; /* 中央寄せ */
+  max-width: 960px;
+  margin: 20px auto;
 padding: 20px;
-  background-color: #fff; /* ポートフォリオの背景色 */
+  background-color: #fff;
 border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ちょっとした影 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* トップセクション (ヘッダー) */
 top {
-  display: block; /* <top> は標準HTML要素ではないため、ブロック要素として定義 */
+  display: block;
 text-align: center;
 padding-bottom: 20px;
-  border-bottom: 1px solid #eee; /* 区切り線 */
+  border-bottom: 1px solid #eee;
 margin-bottom: 30px;
 }
 
@@ -38,65 +34,61 @@ font-size: 1.1em;
 color: #666;
 }
 
-/* ナビゲーション */
-nav ul { /* nav 直下の ul を想定 (JSXでは ul がないが、通常 nav の子には ul が来るため) */
+nav ul {
 list-style: none;
 padding: 0;
-  display: flex; /* 横並びにする場合 */
-  justify-content: center; /* 中央寄せ */
-  gap: 20px; /* 各メニュー間のスペース */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav li {
-  display: inline-block; /* li要素を横並びにする場合 (ul に flex を使わない場合) */
-  margin-right: 20px; /* 各メニュー間のスペース (ul に gap を使わない場合) */
+  display: inline-block;
+  margin-right: 20px;
 }
 
 nav a {
 text-decoration: none;
-  color: #007bff; /* リンクの色 */
+  color: #007bff;
 font-weight: bold;
 }
 
 nav a:hover {
 text-decoration: underline;
-  color: #0056b3; /* ホバー時のリンクの色 */
+  color: #0056b3;
 }
 
-/* メインコンテンツ */
 main {
 padding: 0 15px;
 }
 
-/* 各セクション */
 section {
 margin-bottom: 40px;
 padding: 20px;
-  background-color: #f9f9f9; /* セクションごとの背景色 */
+  background-color: #f9f9f9;
 border-radius: 5px;
 }
 
 section h2 {
 color: #333;
-  border-bottom: 2px solid #007bff; /* 見出しのアクセント */
+  border-bottom: 2px solid #007bff;
 padding-bottom: 10px;
 margin-bottom: 20px;
 }
 
-/* 自己紹介セクション */
 #About ul {
 list-style: none;
 padding: 0;
 }
 
 .profile-icon {
-  display: block; /* 画像をブロック要素にして中央寄せしやすくする */
+  display: block;
 width: 150px;
 height: 150px;
-  border-radius: 50%; /* 円形にする */
-  object-fit: cover; /* 画像のアスペクト比を保ちつつトリミング */
-  margin: 0 auto 20px auto; /* 上下左右中央寄せ */
-  border: 3px solid #007bff; /* アイコンの枠線 */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  border: 3px solid #007bff;
 }
 
 #About blockquote {
@@ -111,17 +103,16 @@ color: #555;
 #About blockquote strong {
 display: block;
 margin-bottom: 10px;
-  font-style: normal; /* strong タグのイタリックを解除 */
+  font-style: normal;
 font-weight: bold;
 color: #333;
 }
 
 #About blockquote p {
 margin-bottom: 8px;
-  font-style: normal; /* p タグのイタリックを解除 */
+  font-style: normal;
 }
 
-/* 経歴セクション */
 #career ul {
 list-style: none;
 padding: 0;
@@ -133,7 +124,6 @@ padding-left: 15px;
 border-left: 3px solid #ccc;
 }
 
-/* スキルセクション */
 #skills ul {
 list-style: none;
 padding: 0;
@@ -145,28 +135,26 @@ color: #007bff;
 margin-top: 15px;
 }
 
-#skills ul p { /* li の直下ではなく、ul の直下の p (JSXの構造に合わせる) */
-  margin-left: 20px; /* liからのインデント */
+#skills ul p {
+  margin-left: 20px;
 margin-bottom: 10px;
 font-style: italic;
 color: #666;
 }
 
-/* ハッカソン・インターンシップセクション (共通のスタイルも可能) */
 #hack ul, #interns ul {
-  list-style: disc; /* もし項目が増えたら箇条書きが見やすいかも */
+  list-style: disc;
 padding-left: 20px;
 }
 
 #hack ul:empty::before,
 #interns ul:empty::before {
-  content: "現在、記載できる経歴はありません。"; /* 空の場合の表示 */
+  content: "現在、記載できる経歴はありません。";
 color: #888;
 font-style: italic;
 }
 
 
-/* リンクセクション */
 #links ul {
 list-style: none;
 padding: 0;
@@ -186,14 +174,13 @@ text-decoration: underline;
 color: #0056b3;
 }
 
-/* フッター */
 footer {
 text-align: center;
 margin-top: 40px;
 padding: 20px;
-  background-color: #333; /* フッターの背景色 */
-  color: #fff; /* フッターの文字色 */
-  border-top-left-radius: 8px; /* 全体の .Portfolio の角丸と合わせる場合 */
+  background-color: #333;
+  color: #fff;
+  border-top-left-radius: 8px;
 border-top-right-radius: 8px;
 }
 
@@ -201,7 +188,6 @@ footer p {
 margin: 0;
 }
 
-/* レスポンシブ対応の例 (必要であれば) */
 @media (max-width: 768px) {
 .Portfolio {
     margin: 10px;
@@ -209,13 +195,13 @@ margin: 0;
 }
 
 nav ul {
-    flex-direction: column; /* 画面が小さい場合は縦並び */
+    flex-direction: column;
     gap: 10px;
 }
 
 nav li {
     margin-right: 0;
-    margin-bottom: 10px; /* 縦並びの場合のスペース */
+    margin-bottom: 10px;
 }
 
 .profile-icon {
