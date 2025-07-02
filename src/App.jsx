@@ -1,5 +1,5 @@
 import './App.css';
-import icon from './icon.jpg';
+import icon from './icon.jpg';=
 
 function App() {
 return (
@@ -49,10 +49,10 @@ return (
             <p>基本SQliteを使用(PostgreSQLも使用可能)。基本的なデータベースの操作ができる。</p>
             <li>HTML/CSS</li>
             <p>簡単なwebページをHTMLにて作成可能。CSSは使用可能だがまだ勉強中。</p>
-            <li>JavaScript</li>
-            <p>HTML/CSSに付随して学習。ﾏﾀﾞﾂｶｴﾅｲ。</p>
             <li>React</li>
             <p>Webアプリケーションを作成しながら勉強中。</p>
+            <li>JavaScript/TypeScript</li>
+            <p>Reactに付随して学習中。</p>
         </ul>
         </section>
 
@@ -61,6 +61,8 @@ return (
         <ul>
             <li>SMBC Group GREEN×DATA Challenge 2025</li>
             <p>2025/06/02~06/30に開催。「電力の価格予測にチャレンジしよう！」をテーマに機械学習を用いて電力価格予測を行い、その精度を競うコンペティション。</p>
+            <li>MUDS 学内ハッカソン</li>
+            <p>2025/07/05に開催。</p>
         </ul>
         </section>
 
