@@ -15,7 +15,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@yamada-ui/fontawesome": "^1.0.55",
-    "@yamada-ui/react": "^1.7.7",
+    "@yamada-ui/react": "^1.7.8",
     "@yamada-ui/theme": "^1.20.6",
     "framer-motion": "^12.23.1",
     "react": "^19.1.0",
