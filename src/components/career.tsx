@@ -1,17 +1,22 @@
-import { VStack, Heading, Text } from "@yamada-ui/react";
+import { Stack, Title, List, Text } from '@mantine/core';
 
 const CareerSection = () => {
-    return(
-        <VStack as="section" id="career" alignItems="center" gap="lg">
-            <Heading as="h2" size="xl">
+    return (
+        <Stack component="section" id="career" align="center" gap="lg">
+            <Title order={2}>
                 学歴
-            </Heading>
-            <VStack as="ul" listStyleType="none" gap="md" alignItems="flex-start">
+            </Title>
+
+            <List listStyleType="none" spacing="md">
+                <List.Item>
                 <Text>2021/04~2024/03 都立翔陽高校</Text>
+                </List.Item>
+                <List.Item>
                 <Text>2024/04~ 武蔵野大学データサイエンス学部データサイエンス学科</Text>
-            </VStack>
-        </VStack>
-    )
-}
+                </List.Item>
+            </List>
+        </Stack>
+    );
+};
 
 export default CareerSection;

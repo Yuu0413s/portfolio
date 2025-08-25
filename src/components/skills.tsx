@@ -1,22 +1,4 @@
-import { VStack, HStack, Heading, Text, Icon } from "@yamada-ui/react";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import {faStar as  faStarRegular} from "@fortawesome/free-regular-svg-icons";
-
-const StarRating = ({ rating }: {rating: number}) => {
-    const maxStars = 5
-        return (
-            <HStack gap="xs">
-                {Array.from({ length: maxStars }).map((_, index) => (
-                    <Icon
-                        key={index}
-                        icon={index < rating ? faStar : faStarRegular}
-                        color={index < rating ? "yellow.400" : "gray.300"}
-                        fontSize="lg"
-                    />
-                ))}
-            </HStack>
-    )
-}
+import { Stack, Title, Text, Card, Rating } from '@mantine/core';
 
 const skills = [
     {
@@ -44,37 +26,35 @@ const skills = [
         rating: 2,
         description: "バックエンド開発。Clerkを併用したReact Nativeアプリの開発経験あり",
     }
-]
+];
 
 const SkillsSection = () => {
     return (
-    <VStack as="section" id="skills" alignItems="center" gap="lg">
-        <Heading as="h2" size="xl">
-            スキル
-        </Heading>
+        <Stack component="section" id="skills" align="center" gap="lg">
+            <Title order={2}>
+                スキル
+            </Title>
 
-        <VStack as="ul" listStyleType="none" gap="lg" w="full" maxW="lg">
-        {skills.map((skill) => (
-            <VStack
-                as="li"
-                key={skill.name}
-                alignItems="flex-start"
-                gap="sm"
-                p="md"
-                borderWidth="1px"
-                rounded="md"
-                w="full"
-            >
-            <Heading as="h3" size="md">
-                {skill.name}
-            </Heading>
-            <StarRating rating={skill.rating} />
-            <Text color="muted">{skill.description}</Text>
-            </VStack>
-        ))}
-        </VStack>
-    </VStack>
-    )
-}
+            <Stack component="ul" gap="lg" w="100%" maw={600}>
+                {skills.map((skill) => (
+                    <Card
+                        component="li"
+                        shadow="sm"
+                        padding="lg"
+                        radius="md"
+                        withBorder
+                        key={skill.name}
+                    >
+                        <Title order={3} size="h4">{skill.name}</Title>
 
-export default SkillsSection
+                        <Rating value={skill.rating} readOnly mt="sm" />
+
+                        <Text c="dimmed" mt="sm">{skill.description}</Text>
+                    </Card>
+                ))}
+            </Stack>
+        </Stack>
+    );
+};
+
+export default SkillsSection;

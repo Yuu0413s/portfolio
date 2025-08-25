@@ -1,30 +1,26 @@
-import { VStack, Text, Heading, Divider } from "@yamada-ui/react"
+import { Stack, Text, Title, Divider, AspectRatio } from '@mantine/core';
 
 const MudsHackathon = () => {
-
     return (
-        <VStack alignItems="flex-start" gap="md">
-            <Text>2025/07/05に開催。精算・割り勘時のトラブルを解決するため、「お財布平和条約」という名前のwebアプリケーションを作成</Text>
+        <Stack align="flex-start" gap="md">
+            <Text>
+                2025/07/05に開催。精算・割り勘時のトラブルを解決するため、「お財布平和条約」という名前のwebアプリケーションを作成
+            </Text>
 
-            <Divider />
+            <Divider w="100%" />
 
-            <VStack alignItems="flex-start" gap="sm">
-                <Heading as="h3" size="md">
-                    開発チーム
-                </Heading>
+            <Stack align="flex-start" gap="sm">
+                <Title order={3} size="h5">
+                開発チーム
+                </Title>
                 <Text>チーム名:「チーム林Lab」</Text>
+            </Stack>
 
-            </VStack>
-
-            <VStack>
-                <iframe
-                    src="https://docs.google.com/presentation/d/e/2PACX-1vSxpn-VlB6r6i8TZ5tAEOjTESY6BHdtbxiK9zxr1_KxwXWpK_L8wFI67VVPiNRew56bHWIhm22rxIuI/pub?start=true&loop=false&delayms=3000"
-                    frameBorder="0"
-                    allowFullScreen={true}
-                />
-            </VStack>
-        </VStack>
-    )
-}
+            <AspectRatio ratio={16 / 9} w="100%">
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSxpn-VlB6r6i8TZ5tAEOjTESY6BHdtbxiK9zxr1_KxwXWpK_L8wFI67VVPiNRew56bHWIhm22rxIuI/pubembed?start=true&loop=false&delayms=3000" frameBorder="0" width="960" height="569" allowFullScreen={true}></iframe>
+            </AspectRatio>
+        </Stack>
+    );
+};
 
 export default MudsHackathon;

@@ -1,4 +1,4 @@
-import { VStack, Heading, Text, Divider, Center } from "@yamada-ui/react";
+import { Stack, Title, Text, Divider, Center } from "@mantine/core";
 import React from 'react';
 
 type Internship = {
@@ -23,12 +23,11 @@ export const INTERNSHIP_LIST: Internship[] = [
     */
 ];
 
-
 const Interns = () => {
     if (INTERNSHIP_LIST.length === 0) {
         return (
-            <Center as="section" w="full" p="lg">
-                <Text color="muted">
+            <Center component="section" w="100%" p="lg">
+                <Text c="dimmed">
                     インターンシップ経験はありません。
                 </Text>
             </Center>
@@ -36,27 +35,29 @@ const Interns = () => {
     }
 
     return (
-        <VStack as="section" w="full" alignItems="flex-start" gap="xl">
+        <Stack component="section" w="100%" align="flex-start" gap="xl">
             {INTERNSHIP_LIST.map((internship, index) => {
                 const InternComponent = internship.component;
 
-                    return (
-                        <VStack
-                            key={internship.slug}
-                            alignItems="flex-start"
-                            gap="md"
-                            w="full"
-                        >
-                            <Heading as="h4" size="md">{internship.internshipTitle}</Heading>
-                            <Text fontWeight="bold">{internship.companyName}</Text>
-                            <Text color="muted">{internship.period}</Text>
-                            <Text>{internship.description}</Text>
-                            {InternComponent && <InternComponent />}
-                            {index < INTERNSHIP_LIST.length - 1 && <Divider mt="lg" />}
-                        </VStack>
-                    );
-                })}
-        </VStack>
+                return (
+                    <Stack
+                        key={internship.slug}
+                        align="flex-start"
+                        gap="md"
+                        w="100%"
+                    >
+                        <Title order={4} size="h4">{internship.internshipTitle}</Title>
+                        <Text fw="bold">{internship.companyName}</Text>
+                        <Text c="dimmed">{internship.period}</Text>
+                        <Text>{internship.description}</Text>
+
+                        {InternComponent && <InternComponent />}
+
+                        {index < INTERNSHIP_LIST.length - 1 && <Divider mt="lg" />}
+                    </Stack>
+                );
+            })}
+        </Stack>
     );
 };
 

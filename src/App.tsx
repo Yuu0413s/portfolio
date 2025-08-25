@@ -1,45 +1,48 @@
-import Header from './components/header'
-import About from './components/about'
-import Skills from './components/skills'
-import Projects from './components/projects'
-import Awards from './components/awards'
-import Interns from './components/interns'
-import Career from './components/career'
-import Links from './components/links'
+import { Stack, Container, Title, Divider } from '@mantine/core';
 
-import { VStack, Container, Heading, Divider } from '@yamada-ui/react'
+import Header from './components/header';
+import About from './components/about';
+import Skills from './components/skills';
+import Projects from './components/projects';
+import Awards from './components/awards';
+import Interns from './components/interns';
+import Career from './components/career';
+import Links from './components/links';
 
 function App() {
     return (
-    <Container maxW="container.lg" py="lg">
-        <Header />
-            <VStack as="main" gap="5xl" mt="xl">
-                <VStack as="section" id="About" w="full">
-                    <About />
-                </VStack>
+        <Container size="lg" py="lg">
+            <Header />
 
-                <VStack id="career" w="full"><Career /></VStack>
+            <Stack component="main" gap="xl" mt="xl">
+                <Stack component="section" id="About" w="100%">
+                <About />
+                </Stack>
 
-                <VStack as="section" id="skills" w="full">
-                    <Skills />
-                </VStack>
+                <Stack component="section" id="career" w="100%">
+                <Career />
+                </Stack>
 
-                <VStack as="section" w="full" alignItems="flex-start" gap="2xl">
-                    <Heading as="h2" size="xl">
-                        プロジェクト・受賞経歴
-                    </Heading>
-                    <Divider />
-                    <VStack id="projects" w="full"><Projects /></VStack>
-                    <VStack id="awards" w="full"><Awards /></VStack>
-                    <VStack id="interns" w="full"><Interns /></VStack>
-                </VStack>
+                <Stack component="section" id="skills" w="100%">
+                <Skills />
+                </Stack>
 
-                <VStack as="section" id="links" w="full">
-                    <Links />
-                </VStack>
-            </VStack>
-    </Container>
-    )
+                <Stack component="section" align="flex-start" gap="lg">
+                <Title order={2}>
+                    プロジェクト・受賞経歴
+                </Title>
+                <Divider w="100%" />
+                <Stack id="projects" w="100%"><Projects /></Stack>
+                <Stack id="awards" w="100%"><Awards /></Stack>
+                <Stack id="interns" w="100%"><Interns /></Stack>
+                </Stack>
+
+                <Stack component="section" id="links" w="100%">
+                <Links />
+                </Stack>
+            </Stack>
+        </Container>
+    );
 }
 
-export default App
+export default App;

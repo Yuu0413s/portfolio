@@ -1,8 +1,9 @@
-import { VStack, Heading, Text, Divider } from "@yamada-ui/react";
+import { Stack, Title, Text, Divider } from '@mantine/core';
 
 import MudsHackathon from "../contents/projects/muds-hackathon";
 import SmbcChallenge from "../contents/projects/smbc-challenge";
 import GeekCamp from "../contents/projects/geekcamp-2025v8";
+import OC2025 from "../contents/projects/oc-2025-08";
 
 export const HACKATHON_LIST = [
     {
@@ -25,32 +26,39 @@ export const HACKATHON_LIST = [
         date: "2025/07/26, 27",
         description: "サポーターズ主催のハッカソン",
         component: GeekCamp,
+    },
+    {
+        slug: "muds-oc-0205-08",
+        title: "武蔵野大学オープンキャンパス",
+        date: "2025/08/23",
+        description: "オープンキャンパスにて開発したwebアプリについて発表",
+        component: OC2025,
     }
 ];
 
 const Projects = () => {
     return (
-    <VStack as="section" w="full" alignItems="flex-start" gap="xl">
-        {HACKATHON_LIST.map((hackathon, index) => {
-            const ProjectComponent = hackathon.component;
+        <Stack component="section" w="100%" align="flex-start" gap="xl">
+            {HACKATHON_LIST.map((hackathon, index) => {
+                const ProjectComponent = hackathon.component;
 
-            return (
-                <VStack
-                    key={hackathon.slug}
-                    alignItems="flex-start"
-                    gap="md"
-                    w="full"
-                >
-                    <Heading as="h4" size="md">{hackathon.title}</Heading>
-                    <Text color="muted">{hackathon.date}</Text>
+                return (
+                    <Stack
+                        key={hackathon.slug}
+                        align="flex-start"
+                        gap="md"
+                        w="100%"
+                    >
+                        <Title order={4} size="h4">{hackathon.title}</Title>
+                        <Text c="dimmed">{hackathon.date}</Text>
 
-                    <ProjectComponent />
+                        <ProjectComponent />
 
-                    {index < HACKATHON_LIST.length - 1 && <Divider mt="lg" />}
-                </VStack>
-            );
-        })}
-    </VStack>
+                        {index < HACKATHON_LIST.length - 1 && <Divider mt="lg" />}
+                    </Stack>
+                );
+            })}
+        </Stack>
     );
 };
 

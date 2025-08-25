@@ -1,41 +1,25 @@
-import { VStack, Heading, Text, HStack, Link, List, ListItem } from "@yamada-ui/react"
+import { Stack, Title, Text, Group, Anchor } from '@mantine/core';
 
 const Header = () => {
     return (
-        <VStack as="header" alignItems="center" gap="md">
-        <Heading as="h1" size="2xl">
-            Portfolio
-        </Heading>
+        <Stack component="header" align="center" gap="md">
+            <Title order={1} size="h1">
+                Portfolio
+            </Title>
 
-        <Text>ユーザーの希望に応えるエンジニア</Text>
+            <Text>ユーザーの希望に応えるエンジニア</Text>
 
-        <HStack as="nav">
-            <List display="flex" gap="md">
-            <ListItem>
-                <Link href="#About">自己紹介</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#career">経歴</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#skills">スキル</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#projects">プロジェクト</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#awards">受賞経歴</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#interns">インターンシップ・職歴</Link>
-            </ListItem>
-            <ListItem>
-                <Link href="#links">リンク</Link>
-            </ListItem>
-            </List>
-        </HStack>
-        </VStack>
-    )
-    }
+            <Group component="nav" gap="md" mt="sm">
+                <Anchor href="#About">自己紹介</Anchor>
+                <Anchor href="#career">経歴</Anchor>
+                <Anchor href="#skills">スキル</Anchor>
+                <Anchor href="#projects">プロジェクト</Anchor>
+                <Anchor href="#awards">受賞経歴</Anchor>
+                <Anchor href="#interns">インターンシップ・職歴</Anchor>
+                <Anchor href="#links">リンク</Anchor>
+            </Group>
+        </Stack>
+    );
+};
 
-    export default Header;
+export default Header;

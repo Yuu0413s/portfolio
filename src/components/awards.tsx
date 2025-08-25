@@ -1,16 +1,16 @@
-import { VStack, HStack, Heading, Text, Center } from "@yamada-ui/react";
+import { Stack, Group, Title, Text, Center, Card } from '@mantine/core';
 
-type AwardSection = {
+type Award = {
     awardName: string;
     eventName: string;
     date: string;
     description: string;
 };
 
-const awardsData: AwardSection[] = [
+const awardsData: Award[] = [
     {
         awardName: "審査員賞",
-        eventName: "MUDS 第1回学内ハッカソン",
+        eventName: "MUDS 第1回学内ハッサン",
         date: "2025年7月5日",
         description: "開発したプロダクト「お財布平和条約」の企画と実装が評価されました。",
     },
@@ -19,50 +19,43 @@ const awardsData: AwardSection[] = [
 const AwardSection = () => {
     if (awardsData.length === 0) {
         return (
-        <VStack as="section" id="awards" w="full" alignItems="center" gap="lg">
-            <Heading as="h2" size="xl">
+            <Stack component="section" id="awards" w="100%" align="center" gap="lg">
+                <Title order={2}>
                 受賞経歴
-            </Heading>
-            <Center p="lg">
-            <Text color="muted">まだ受賞歴はありません。</Text>
-            </Center>
-        </VStack>
+                </Title>
+                <Center p="lg">
+                <Text c="dimmed">まだ受賞歴はありません。</Text>
+                </Center>
+            </Stack>
         );
     }
 
     return (
-    <VStack as="section" id="awards" w="full" alignItems="center" gap="lg">
-        <Heading as="h2" size="xl">
+        <Stack component="section" id="awards" w="100%" align="center" gap="lg">
+        <Title order={2}>
             受賞経歴
-        </Heading>
+        </Title>
 
-        <VStack as="ul" listStyleType="none" gap="lg" w="full" maxW="lg">
-            {awardsData.map((award, index) => (
-            <VStack
-                as="li"
-                key={index}
-                alignItems="flex-start"
-                gap="sm"
-                p="md"
-                borderWidth="1px"
-                rounded="md"
-                w="full"
+            <Stack component="ul" gap="lg" w="100%" maw={600}>
+                {awardsData.map((award, index) => (
+                <Card
+                    component="li"
+                    shadow="sm"
+                    padding="lg"
+                    radius="md"
+                    withBorder
+                    key={index}
                 >
-                <HStack w="full" justifyContent="space-between">
-                <Heading as="h3" size="md">
-                    {award.awardName}
-                </Heading>
-                <Text color="muted" fontSize="sm">{award.date}</Text>
-                </HStack>
-                <HStack>
-                <Text fontWeight="bold">{award.eventName}</Text>
-                </HStack>
-
-                <Text pt="sm" color="muted">{award.description}</Text>
-            </VStack>
-            ))}
-        </VStack>
-        </VStack>
+                    <Group justify="space-between">
+                    <Title order={3} size="h4">{award.awardName}</Title>
+                    <Text size="sm" c="dimmed">{award.date}</Text>
+                    </Group>
+                    <Text fw="bold" mt="md">{award.eventName}</Text>
+                    <Text c="dimmed" mt="sm">{award.description}</Text>
+                </Card>
+                ))}
+            </Stack>
+        </Stack>
     );
 };
 
