@@ -16,7 +16,6 @@ const Header = () => {
                 <Anchor href="#projects">プロジェクト</Anchor>
                 <Anchor href="#awards">受賞経歴</Anchor>
                 <Anchor href="#interns">インターンシップ・職歴</Anchor>
-                <Anchor href="#links">リンク</Anchor>
             </Group>
         </Stack>
     );

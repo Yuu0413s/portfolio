@@ -1,4 +1,5 @@
-import { Stack, Container, Title, Divider } from '@mantine/core';
+import { AppShell, Burger, Stack, Container, Title, Divider } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 import Header from './components/header';
 import About from './components/about';
@@ -10,38 +11,74 @@ import Career from './components/career';
 import Links from './components/links';
 
 function App() {
+    const [opened, { toggle }] = useDisclosure();
+
     return (
-        <Container size="lg" py="lg">
-            <Header />
-
-            <Stack component="main" gap="xl" mt="xl">
-                <Stack component="section" id="About" w="100%">
-                <About />
+        <AppShell
+            navbar={{
+                width: 300,
+                breakpoint: 'sm',
+                collapsed: { mobile: !opened },
+            }}
+            padding="md"
+        >
+            <AppShell.Navbar
+                p="md"
+                style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    borderRight: '1px solid rgba(229, 231, 235, 0.5)',
+                }}
+            >
+                <Stack justify="space-between" h="100%">
+                    <Header />
+                    <Links />
                 </Stack>
+            </AppShell.Navbar>
 
-                <Stack component="section" id="career" w="100%">
-                <Career />
-                </Stack>
+            <AppShell.Main>
+                <Burger
+                opened={opened}
+                onClick={toggle}
+                hiddenFrom="sm"
+                size="sm"
+                />
 
-                <Stack component="section" id="skills" w="100%">
-                <Skills />
-                </Stack>
+                <Container size="md" py="lg">
+                <Stack gap="xl">
+                    <Stack component="section" id="About">
+                        <About />
+                    </Stack>
 
-                <Stack component="section" align="flex-start" gap="lg">
-                <Title order={2}>
-                    プロジェクト・受賞経歴
-                </Title>
-                <Divider w="100%" />
-                <Stack id="projects" w="100%"><Projects /></Stack>
-                <Stack id="awards" w="100%"><Awards /></Stack>
-                <Stack id="interns" w="100%"><Interns /></Stack>
-                </Stack>
+                    <Stack component="section" id="career">
+                        <Career />
+                    </Stack>
 
-                <Stack component="section" id="links" w="100%">
-                <Links />
+                    <Stack component="section" id="skills">
+                        <Skills />
+                    </Stack>
+
+                    <Stack component="section" id="projects">
+                        <Title order={2}>プロジェクト</Title>
+                        <Divider />
+                        <Projects />
+                    </Stack>
+
+                    <Stack component="section" id="awards">
+                        <Awards />
+                    </Stack>
+
+                    <Stack component="section" id="interns">
+                        <Title order={2}>インターンシップ</Title>
+                        <Divider />
+                        <Interns />
+                    </Stack>
+
                 </Stack>
-            </Stack>
-        </Container>
+                </Container>
+            </AppShell.Main>
+        </AppShell>
     );
 }
 

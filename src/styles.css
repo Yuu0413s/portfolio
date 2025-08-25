@@ -1,0 +1,57 @@
+:root {
+    --pale-blue: #f0f8ff;
+    --sky-blue: #87ceeb;
+    --deep-sky-blue: #00bfff;
+    --dark-gray: #2f4f4f;
+    --medium-gray: #696969;
+    --light-gray: #e0e0e0;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--pale-blue);
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-gray);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--sky-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--deep-sky-blue);
+    text-decoration: underline;
+}
+
+.custom-card {
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--light-gray);
+    margin: 2rem 0;
+}
