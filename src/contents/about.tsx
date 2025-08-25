@@ -1,4 +1,4 @@
-import { VStack, HStack, Heading, Text, Image, Box } from "@Yamada-UI/react"
+import { VStack, HStack, Heading, Text, Image } from "@yamada-ui/react"
 import icon from "./assets/icon.jpg"
 
 const AboutSection = () => {

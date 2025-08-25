@@ -1,20 +1,20 @@
-import { VStack, HStack, Heading, Text, Icon } from "@Yamada-UI/react";
+import { VStack, HStack, Heading, Text, Icon } from "@yamada-ui/react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import {faStar as  faStarRegular} from "@fortawesome/free-regular-svg-icons";
 
 const StarRating = ({ rating }): {rating: number} => {
     const maxStars = 5
-    return (
-        <HStack gap="xs">
-            {Array.from({ length: maxStars }).map((_, index) => (
-                <Icon
-                    key={index}
-                    icon={index < rating ? faStar : faStarRegular}
-                    color={index < rating ? "yellow.400" : "gray.300"}
-                    fontSize="lg"
-                />
-            ))}
-        </HStack>
+        return (
+            <HStack gap="xs">
+                {Array.from({ length: maxStars }).map((_, index) => (
+                    <Icon
+                        key={index}
+                        icon={index < rating ? faStar : faStarRegular}
+                        color={index < rating ? "yellow.400" : "gray.300"}
+                        fontSize="lg"
+                    />
+                ))}
+            </HStack>
     )
 }
 

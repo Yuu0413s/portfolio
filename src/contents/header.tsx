@@ -7,7 +7,7 @@ const PortfolioHeader = () => {
             Portfolio
         </Heading>
 
-        <Text>Learning data science and programming in university...</Text>
+        <Text>ユーザーの希望に応えるエンジニア</Text>
 
         <HStack as="nav">
             <List display="flex" gap="md">
@@ -21,10 +21,13 @@ const PortfolioHeader = () => {
                 <Link href="#skills">スキル</Link>
             </ListItem>
             <ListItem>
-                <Link href="#hack">ハッカソン・コンペティション</Link>
+                <Link href="#projects">プロジェクト</Link>
             </ListItem>
             <ListItem>
-                <Link href="#interns">インターンシップ</Link>
+                <Link href="#hack">受賞経歴</Link>
+            </ListItem>
+            <ListItem>
+                <Link href="#interns">インターンシップ・職歴</Link>
             </ListItem>
             <ListItem>
                 <Link href="#links">リンク</Link>
