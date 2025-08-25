@@ -1,5 +1,6 @@
 import MudsHackathon from "./muds-hackathon"
 import SmbcChallenge from "./smbc-challenge"
+import GeekCamp from "./geekcamp-2025v8"
 
 // 各ハッカソンの情報を定義
 export const HACKATHON_LIST = [
@@ -10,6 +11,7 @@ export const HACKATHON_LIST = [
     description: "機械学習を用いて電力価格予測を行い、その精度を競うコンペティション。",
     component: SmbcChallenge,
     },
+
     {
     slug: "muds-hackathon-2025",
     title: "MUDS 学内ハッカソン",
@@ -17,4 +19,12 @@ export const HACKATHON_LIST = [
     description: "学内で開催されたハッカソン。",
     component: MudsHackathon,
     },
+
+    {
+    slug: "geek-camp-2025-vol8",
+    title: "技育CAMPハッカソン Vol.8",
+    date: "2025/7/26,27",
+    description: "サポーターズ主催のハッカソン",
+    component: GeekCamp,
+    }
 ]
