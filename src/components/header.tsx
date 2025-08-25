@@ -1,6 +1,6 @@
 import { VStack, Heading, Text, HStack, Link, List, ListItem } from "@yamada-ui/react"
 
-const PortfolioHeader = () => {
+const Header = () => {
     return (
         <VStack as="header" alignItems="center" gap="md">
         <Heading as="h1" size="2xl">
@@ -24,7 +24,7 @@ const PortfolioHeader = () => {
                 <Link href="#projects">プロジェクト</Link>
             </ListItem>
             <ListItem>
-                <Link href="#hack">受賞経歴</Link>
+                <Link href="#awards">受賞経歴</Link>
             </ListItem>
             <ListItem>
                 <Link href="#interns">インターンシップ・職歴</Link>
@@ -38,4 +38,4 @@ const PortfolioHeader = () => {
     )
     }
 
-    export default PortfolioHeader
+    export default Header;

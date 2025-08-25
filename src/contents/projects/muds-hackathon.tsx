@@ -27,4 +27,4 @@ const MudsHackathon = () => {
     )
 }
 
-export default MudsHackathon
+export default MudsHackathon;

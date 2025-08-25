@@ -1,6 +1,6 @@
 import { VStack, Text, Heading, Divider } from "@yamada-ui/react"
 
-const MudsHackathon = () => {
+const GeekCamp = () => {
 
     return (
         <VStack alignItems="flex-start" gap="md">
@@ -27,4 +27,4 @@ const MudsHackathon = () => {
     )
 }
 
-export default MudsHackathon
+export default GeekCamp;

@@ -14,4 +14,4 @@ const SmbcChallenge = () => {
     )
 }
 
-export default SmbcChallenge
+export default SmbcChallenge;

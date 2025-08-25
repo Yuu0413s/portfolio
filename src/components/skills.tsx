@@ -2,7 +2,7 @@ import { VStack, HStack, Heading, Text, Icon } from "@yamada-ui/react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import {faStar as  faStarRegular} from "@fortawesome/free-regular-svg-icons";
 
-const StarRating = ({ rating }): {rating: number} => {
+const StarRating = ({ rating }: {rating: number}) => {
     const maxStars = 5
         return (
             <HStack gap="xs">
@@ -22,28 +22,28 @@ const skills = [
     {
         name: "Python",
         rating: 3,
-        description: "基本的なコーディングができる。Streamlitを用いたwebアプリケーションの開発が得意。",
+        description: "データ分析・web開発。pandas, numpy, streamlitを使用",
     },
     {
         name: "SQL",
         rating: 2,
-        description: "基本SQliteを使用(PostgreSQLも使用可能)。基本的なデータベースの操作ができる。",
+        description: "データベース設計・データ抽出。postgreSQL, SQLiteを使用",
     },
     {
         name: "HTML/CSS",
-        rating: 3,
-        description: "簡単なwebページをHTMLにて作成可能。CSSは使用可能だがまだ勉強中。",
-    },
-    {
-        name: "React",
-        rating: 2,
-        description: "Webアプリケーションを作成しながら勉強中。",
+        rating: 4,
+        description: "webサイト作成",
     },
     {
         name: "JavaScript/TypeScript",
-        rating: 2,
-        description: "Reactに付随して学習中。",
+        rating: 4,
+        description: "フロントエンド開発。Vanilla JS/TSからReactまで経験",
     },
+    {
+        name: "Convex",
+        rating: 2,
+        description: "バックエンド開発。Clerkを併用したReact Nativeアプリの開発経験あり",
+    }
 ]
 
 const SkillsSection = () => {
