@@ -11,16 +11,13 @@ type Internship = {
 };
 
 export const INTERNSHIP_LIST: Internship[] = [
-    /*//インターン追加時のテンプレート
     {
-        slug: "sample-company-intern-2025",
-        companyName: "株式会社サンプル",
-        internshipTitle: "ソフトウェアエンジニア インターン",
-        period: "2025年8月 ~ 2025年9月",
-        description: "Webサービスのフロントエンド開発を担当しました。",
-        // component: SampleIntern,
+        slug: "litalico-wonder",
+        companyName: "株式会社LITALICO",
+        internshipTitle: "LITALICOワンダー 新宿教室講師",
+        period: "2025年9月 ~",
+        description: "子供向けプログラミング教育の講師を担当。",
     },
-    */
 ];
 
 const Interns = () => {
