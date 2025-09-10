@@ -1,6 +1,8 @@
 import { Stack, Title, Text, Divider, Center } from "@mantine/core";
 import React from 'react';
 
+import LITALICOWonder from "../contents/interns/litalico-wonder";
+
 type Internship = {
     slug: string;
     companyName: string;
@@ -17,6 +19,7 @@ export const INTERNSHIP_LIST: Internship[] = [
         internshipTitle: "LITALICOワンダー 新宿教室講師",
         period: "2025年9月 ~",
         description: "子供向けプログラミング教育の講師を担当。",
+        component: LITALICOWonder,
     },
 ];
 
