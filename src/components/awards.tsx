@@ -9,10 +9,10 @@ type Award = {
 
 const awardsData: Award[] = [
     {
+        eventName: "MUDS 第1回学内ハッカソン",
         awardName: "審査員賞",
-        eventName: "MUDS 第1回学内ハッサン",
         date: "2025年7月5日",
-        description: "開発したプロダクト「お財布平和条約」の企画と実装が評価されました。",
+        description: "開発したプロダクト「お財布平和条約」の企画と実用性、またデプロイまで行ったことが評価されました。",
     },
 ];
 
@@ -38,14 +38,7 @@ const AwardSection = () => {
 
             <Stack component="ul" gap="lg" w="100%" maw={600}>
                 {awardsData.map((award, index) => (
-                <Card
-                    component="li"
-                    shadow="sm"
-                    padding="lg"
-                    radius="md"
-                    withBorder
-                    key={index}
-                >
+                <Card key={index} >
                     <Group justify="space-between">
                     <Title order={3} size="h4">{award.awardName}</Title>
                     <Text size="sm" c="dimmed">{award.date}</Text>

@@ -4,7 +4,7 @@ const CareerSection = () => {
     return (
         <Stack component="section" id="career" align="center" gap="lg">
             <Title order={2}>
-                学歴
+                学歴・職歴
             </Title>
 
             <List listStyleType="none" spacing="md">
@@ -13,6 +13,9 @@ const CareerSection = () => {
                 </List.Item>
                 <List.Item>
                 <Text>2024/04~ 武蔵野大学データサイエンス学部データサイエンス学科</Text>
+                </List.Item>
+                <List.Item>
+                    <Text>2025/09~ LITALICOワンダー新宿教室 講師(インターン)</Text>
                 </List.Item>
             </List>
         </Stack>

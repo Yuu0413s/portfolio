@@ -4,7 +4,7 @@ const GeekCamp = () => {
     return (
         <Stack align="flex-start" gap="md">
             <Text>
-                2025/07/26,27に開催。ユーザーごとのトレーニング、ダイエットをサポートする「MyFitCoach」という名前のwebアプリケーションを作成
+                ユーザーごとのトレーニング、ダイエットをサポートする「MyFitCoach」という名前のwebアプリケーションを作成
             </Text>
 
             <Divider w="100%" />

@@ -4,7 +4,7 @@ const MudsHackathon = () => {
     return (
         <Stack align="flex-start" gap="md">
             <Text>
-                2025/07/05に開催。精算・割り勘時のトラブルを解決するため、「お財布平和条約」という名前のwebアプリケーションを作成
+                精算・割り勘時のトラブルを解決するため、「お財布平和条約」という名前のwebアプリケーションを作成
             </Text>
 
             <Divider w="100%" />
