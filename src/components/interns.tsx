@@ -18,7 +18,7 @@ export const INTERNSHIP_LIST: Internship[] = [
         companyName: "株式会社LITALICO",
         internshipTitle: "LITALICOワンダー 新宿教室講師",
         period: "2025年9月 ~",
-        description: "子供向けプログラミング教育の講師を担当。",
+        description: "子供向けプログラミング教育の講師。",
         component: LITALICOWonder,
     },
 ];
