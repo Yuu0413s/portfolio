@@ -1,5 +1,5 @@
 import { Stack, Group, Title, Text, Image } from '@mantine/core';
-import icon from "../assets/icon.jpg";
+import icon from "../assets/icon.jpeg";
 
 const AboutSection = () => {
     return (
