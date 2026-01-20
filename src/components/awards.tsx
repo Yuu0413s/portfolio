@@ -14,6 +14,12 @@ const awardsData: Award[] = [
         date: "2025年7月5日",
         description: "開発したプロダクト「お財布平和条約」の企画と実用性、またデプロイまで行ったことが評価されました。",
     },
+    {
+        eventName: "MUDS 第2回学内ハッカソン",
+        awardName: "審査員賞",
+        date: "2025年12月13日",
+        description: "開発したSlack Botの目的と実用性、管理・運営等の将来性が評価されました。",
+    },
 ];
 
 const AwardSection = () => {

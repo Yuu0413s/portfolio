@@ -4,6 +4,7 @@ import MudsHackathon from "../contents/projects/muds-hackathon";
 import SmbcChallenge from "../contents/projects/smbc-challenge";
 import GeekCamp from "../contents/projects/geekcamp-2025v8";
 import OC2025 from "../contents/projects/oc-2025-08";
+import MudsHackathon_vol2 from '../contents/projects/muds-hackathon-Vol2';
 
 export const HACKATHON_LIST = [
     {
@@ -33,7 +34,14 @@ export const HACKATHON_LIST = [
         description: "オープンキャンパスにて開発したwebアプリについて発表",
         date: "2025/08/23",
         component: OC2025,
-    }
+    },
+    {
+        slug: "muds-hackathon-2025-vol2",
+        title: "第2回 MUDS 学内ハッカソン",
+        description: "学内で開催されたハッカソン。",
+        date: "事前開発期間 2025/12/5~12/12, 発表 2025/12/13",
+        component: MudsHackathon_vol2,
+    },
 ];
 
 const Projects = () => {
