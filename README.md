@@ -1,12 +1,37 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+個人ポートフォリオサイトです。自己紹介、スキル、プロジェクト、受賞歴、インターンシップなどの情報を掲載しています。
 
-Currently, two official plugins are available:
+**公開URL**: [https://yuu0413.com](https://yuu0413.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 技術スタック
 
-## Expanding the ESLint configuration
+- **フレームワーク**: React 19 + TypeScript
+- **ビルドツール**: Vite
+- **UIライブラリ**: Mantine UI, Yamada UI
+- **アニメーション**: Framer Motion
+- **ルーティング**: React Router DOM
+- **アイコン**: Font Awesome, Tabler Icons
+- **ホスティング**: Cloudflare Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## プロジェクト構成
+
+```
+src/
+├── components/     # UIコンポーネント
+│   ├── about.tsx      # 自己紹介セクション
+│   ├── awards.tsx     # 受賞歴セクション
+│   ├── career.tsx     # 経歴セクション
+│   ├── header.tsx     # ヘッダー・ナビゲーション
+│   ├── interns.tsx    # インターンシップセクション
+│   ├── links.tsx      # リンク集
+│   ├── projects.tsx   # プロジェクトセクション
+│   └── skills.tsx     # スキルセクション
+├── contents/       # プロジェクト詳細コンテンツ
+│   ├── interns/       # インターンシップ詳細
+│   └── projects/      # プロジェクト詳細
+├── assets/         # 画像などの静的ファイル
+├── App.tsx         # メインアプリケーション
+├── main.tsx        # エントリーポイント
+└── styles.css      # グローバルスタイル
+```
