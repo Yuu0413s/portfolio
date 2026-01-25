@@ -22,9 +22,9 @@ const skills = [
         description: "フロントエンド開発。Vanilla JS/TSからReactまで経験",
     },
     {
-        name: "Convex",
-        rating: 2,
-        description: "バックエンド開発。Clerkを併用したReact Nativeアプリの開発経験あり",
+        name: "Next.js",
+        rating: 3,
+        description: "Vercelを用いたdeployが可能。",
     }
 ];
 

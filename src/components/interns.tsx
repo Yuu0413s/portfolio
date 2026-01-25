@@ -21,6 +21,13 @@ export const INTERNSHIP_LIST: Internship[] = [
         description: "子供向けプログラミング教育の講師。",
         component: LITALICOWonder,
     },
+    {
+        slug: "ai-consulting",
+        companyName: "株式会社A.I Consulting",
+        internshipTitle: "株式会社A.I Consulting",
+        period: "2025年12月 ~",
+        description: "フルスタックエンジニアとして、様々な開発を行っている。",
+    },
 ];
 
 const Interns = () => {
