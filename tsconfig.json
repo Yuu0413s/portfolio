@@ -18,11 +18,12 @@
         "skipLibCheck": true,
         "strict": true,
         "target": "ES2020",
-        "useDefineForClassFields": true},
-        "include": [
-            "src"
-        ],
-        "references": [
-        {"path": "./tsconfig.node.json"}
-        ]
+        "useDefineForClassFields": true
+    },
+    "include": [
+        "src"
+    ],
+    "references": [
+        { "path": "./tsconfig.node.json" }
+    ]
 }

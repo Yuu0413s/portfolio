@@ -47,10 +47,10 @@ function App() {
 
             <AppShell.Main>
                 <Burger
-                opened={opened}
-                onClick={toggle}
-                hiddenFrom="sm"
-                size="sm"
+                    opened={opened}
+                    onClick={toggle}
+                    hiddenFrom="sm"
+                    size="sm"
                 />
 
                 <Container size="md" py="lg" className="main-content-styles">

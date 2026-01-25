@@ -27,10 +27,10 @@ const AwardSection = () => {
         return (
             <Stack component="section" id="awards" w="100%" align="center" gap="lg">
                 <Title order={2}>
-                受賞経歴
+                    受賞経歴
                 </Title>
                 <Center p="lg">
-                <Text c="dimmed">まだ受賞歴はありません。</Text>
+                    <Text c="dimmed">まだ受賞歴はありません。</Text>
                 </Center>
             </Stack>
         );
@@ -38,20 +38,20 @@ const AwardSection = () => {
 
     return (
         <Stack component="section" id="awards" w="100%" align="center" gap="lg">
-        <Title order={2}>
-            受賞経歴
-        </Title>
+            <Title order={2}>
+                受賞経歴
+            </Title>
 
             <Stack component="ul" gap="lg" w="100%" maw={600}>
                 {awardsData.map((award, index) => (
-                <Card key={index} >
-                    <Group justify="space-between">
-                    <Title order={3} size="h4">{award.awardName}</Title>
-                    <Text size="sm" c="dimmed">{award.date}</Text>
-                    </Group>
-                    <Text fw="bold" mt="md">{award.eventName}</Text>
-                    <Text c="dimmed" mt="sm">{award.description}</Text>
-                </Card>
+                    <Card key={index}>
+                        <Group justify="space-between">
+                            <Title order={3} size="h4">{award.awardName}</Title>
+                            <Text size="sm" c="dimmed">{award.date}</Text>
+                        </Group>
+                        <Text fw="bold" mt="md">{award.eventName}</Text>
+                        <Text c="dimmed" mt="sm">{award.description}</Text>
+                    </Card>
                 ))}
             </Stack>
         </Stack>

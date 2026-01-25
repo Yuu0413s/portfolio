@@ -11,7 +11,7 @@ const MudsHackathon_vol2 = () => {
 
             <Stack align="flex-start" gap="sm">
                 <Title order={3} size="h5">
-                開発チーム
+                    開発チーム
                 </Title>
                 <Text>チーム名:「✌️しば×いち✌️」</Text>
             </Stack>

@@ -26,32 +26,32 @@ const linksData = [
         url: 'https://qiita.com/yuu_0413',
         icon: <IconBook size={20} />
     },
-    ];
+];
 
-    const Links = () => {
+const Links = () => {
     return (
         <Stack component="section" id="links" align="center" gap="lg">
-        <Title order={2}>リンク</Title>
-        <List spacing="md">
-            {linksData.map((link) => (
-            <List.Item
-                key={link.label}
-                icon={
-                <ThemeIcon color="gray" size={32} radius="xl">
-                    {link.icon}
-                </ThemeIcon>
-                }
-            >
-                {link.type === 'email' ? (
-                <Text mt={5}>{link.label} : {link.value}</Text>
-                ) : (
-                <Anchor href={link.url} target="_blank" size="lg">
-                    {link.label}
-                </Anchor>
-                )}
-            </List.Item>
-            ))}
-        </List>
+            <Title order={2}>リンク</Title>
+            <List spacing="md">
+                {linksData.map((link) => (
+                    <List.Item
+                        key={link.label}
+                        icon={
+                            <ThemeIcon color="gray" size={32} radius="xl">
+                                {link.icon}
+                            </ThemeIcon>
+                        }
+                    >
+                        {link.type === 'email' ? (
+                            <Text mt={5}>{link.label} : {link.value}</Text>
+                        ) : (
+                            <Anchor href={link.url} target="_blank" size="lg">
+                                {link.label}
+                            </Anchor>
+                        )}
+                    </List.Item>
+                ))}
+            </List>
         </Stack>
     );
 };

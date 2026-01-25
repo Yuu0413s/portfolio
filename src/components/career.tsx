@@ -9,10 +9,10 @@ const CareerSection = () => {
 
             <List listStyleType="none" spacing="md">
                 <List.Item>
-                <Text>2021/04~2024/03 都立翔陽高校</Text>
+                    <Text>2021/04~2024/03 都立翔陽高校</Text>
                 </List.Item>
                 <List.Item>
-                <Text>2024/04~ 武蔵野大学データサイエンス学部データサイエンス学科</Text>
+                    <Text>2024/04~ 武蔵野大学データサイエンス学部データサイエンス学科</Text>
                 </List.Item>
                 <List.Item>
                     <Text>2025/09~ LITALICOワンダー新宿教室 講師(インターン)</Text>
