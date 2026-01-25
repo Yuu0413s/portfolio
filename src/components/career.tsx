@@ -17,6 +17,9 @@ const CareerSection = () => {
                 <List.Item>
                     <Text>2025/09~ LITALICOワンダー新宿教室 講師(インターン)</Text>
                 </List.Item>
+                <List.Item>
+                    <Text>2025/12~ 株式会社A.I Consulting フルスタックエンジニア(インターン)</Text>
+                </List.Item>
             </List>
         </Stack>
     );
