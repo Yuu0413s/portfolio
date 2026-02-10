@@ -11,6 +11,18 @@
     --sidebar-text: #ECF0F1;
     --sidebar-text-secondary: #95A5A6;
     --sidebar-active-bg: #34495E;
+
+    /* 新しいアクセントカラー */
+    --primary-color: #3498DB;
+    --secondary-color: #2C3E50;
+    --accent-color: #E74C3C;
+    --success-color: #27AE60;
+    --warning-color: #F39C12;
+
+    /* グラデーション */
+    --gradient-bg: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+    --gradient-primary: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+    --gradient-accent: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
 }
 
 body {
@@ -82,18 +94,31 @@ body {
 .main-content-styles .custom-card {
     background-color: var(--white);
     border: 1px solid var(--light-gray);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.5rem;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .main-content-styles .custom-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 12px 24px rgba(52, 152, 219, 0.15);
+    border-color: var(--primary-color);
 }
 
 .main-content-styles hr {
     border: none;
     border-top: 1px solid var(--light-gray);
     margin: 2rem 0;
+}
+
+.sidebar-styles .link-item:hover {
+    background-color: var(--sidebar-active-bg);
+}
+
+.connect-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-icon:hover {
+    transform: scale(1.15);
 }

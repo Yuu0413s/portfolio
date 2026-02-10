@@ -1,4 +1,35 @@
-import { Stack, Title, List, Text } from '@mantine/core';
+import { Stack, Title, Text, Timeline, ThemeIcon } from '@mantine/core';
+import { IconSchool, IconBriefcase } from '@tabler/icons-react';
+
+const careerData = [
+    {
+        date: '2021/04 ~ 2024/03',
+        title: '都立翔陽高校',
+        type: 'education',
+        active: false,
+    },
+    {
+        date: '2024/04 ~ 現在',
+        title: '武蔵野大学',
+        description: 'データサイエンス学部データサイエンス学科',
+        type: 'education',
+        active: true,
+    },
+    {
+        date: '2025/09 ~ 現在',
+        title: 'LITALICOワンダー新宿教室',
+        description: '講師(インターン)',
+        type: 'work',
+        active: true,
+    },
+    {
+        date: '2025/12 ~ 現在',
+        title: '株式会社A.I Consulting',
+        description: 'フルスタックエンジニア(インターン)',
+        type: 'work',
+        active: true,
+    },
+];
 
 const CareerSection = () => {
     return (
@@ -7,20 +38,41 @@ const CareerSection = () => {
                 学歴・職歴
             </Title>
 
-            <List listStyleType="none" spacing="md">
-                <List.Item>
-                    <Text>2021/04~2024/03 都立翔陽高校</Text>
-                </List.Item>
-                <List.Item>
-                    <Text>2024/04~ 武蔵野大学データサイエンス学部データサイエンス学科</Text>
-                </List.Item>
-                <List.Item>
-                    <Text>2025/09~ LITALICOワンダー新宿教室 講師(インターン)</Text>
-                </List.Item>
-                <List.Item>
-                    <Text>2025/12~ 株式会社A.I Consulting フルスタックエンジニア(インターン)</Text>
-                </List.Item>
-            </List>
+            <Timeline active={careerData.length} bulletSize={32} lineWidth={2} color="blue">
+                {careerData.map((item, index) => (
+                    <Timeline.Item
+                        key={index}
+                        bullet={
+                            <ThemeIcon
+                                size={32}
+                                variant="filled"
+                                radius="xl"
+                                color={item.type === 'education' ? 'blue' : 'teal'}
+                            >
+                                {item.type === 'education' ? (
+                                    <IconSchool size={18} />
+                                ) : (
+                                    <IconBriefcase size={18} />
+                                )}
+                            </ThemeIcon>
+                        }
+                        title={
+                            <Text fw={700} size="lg">
+                                {item.title}
+                            </Text>
+                        }
+                    >
+                        <Text c="dimmed" size="sm" mt={4}>
+                            {item.date}
+                        </Text>
+                        {item.description && (
+                            <Text size="sm" mt="xs">
+                                {item.description}
+                            </Text>
+                        )}
+                    </Timeline.Item>
+                ))}
+            </Timeline>
         </Stack>
     );
 };

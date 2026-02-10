@@ -1,4 +1,5 @@
-import { Stack, Title, Text, Divider, Center } from "@mantine/core";
+import { Stack, Title, Text, Center, Card, Badge, Group, ThemeIcon } from "@mantine/core";
+import { IconBriefcase } from '@tabler/icons-react';
 import React from 'react';
 
 import LITALICOWonder from "../contents/interns/litalico-wonder";
@@ -42,26 +43,47 @@ const Interns = () => {
     }
 
     return (
-        <Stack component="section" w="100%" align="flex-start" gap="xl">
-            {INTERNSHIP_LIST.map((internship, index) => {
+        <Stack component="section" w="100%" align="flex-start" gap="lg">
+            {INTERNSHIP_LIST.map((internship) => {
                 const InternComponent = internship.component;
 
                 return (
-                    <Stack
+                    <Card
                         key={internship.slug}
-                        align="flex-start"
-                        gap="md"
+                        shadow="md"
+                        padding="xl"
+                        radius="lg"
+                        withBorder
+                        className="custom-card"
                         w="100%"
                     >
-                        <Title order={4} size="h4">{internship.internshipTitle}</Title>
-                        <Text fw="bold">{internship.companyName}</Text>
-                        <Text c="dimmed">{internship.period}</Text>
-                        <Text>{internship.description}</Text>
+                        <Stack gap="md">
+                            <Group gap="md" align="flex-start">
+                                <ThemeIcon
+                                    size={50}
+                                    radius="md"
+                                    variant="gradient"
+                                    gradient={{ from: 'teal', to: 'cyan' }}
+                                >
+                                    <IconBriefcase size={28} />
+                                </ThemeIcon>
 
-                        {InternComponent && <InternComponent />}
+                                <Stack gap="xs" style={{ flex: 1 }}>
+                                    <Title order={3} size="h4">{internship.internshipTitle}</Title>
+                                    <Text fw={700} c="blue">{internship.companyName}</Text>
+                                    <Group gap="xs">
+                                        <Badge variant="light" color="teal">
+                                            {internship.period}
+                                        </Badge>
+                                    </Group>
+                                </Stack>
+                            </Group>
 
-                        {index < INTERNSHIP_LIST.length - 1 && <Divider mt="lg" />}
-                    </Stack>
+                            <Text>{internship.description}</Text>
+
+                            {InternComponent && <InternComponent />}
+                        </Stack>
+                    </Card>
                 );
             })}
         </Stack>

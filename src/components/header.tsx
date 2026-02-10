@@ -1,4 +1,5 @@
-import { Stack, Title, Text, Group, Anchor } from '@mantine/core';
+import { Stack, Title, Text, Group, Anchor, Divider } from '@mantine/core';
+import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
     return (
@@ -9,14 +10,19 @@ const Header = () => {
 
             <Text>ユーザーの希望に応えるエンジニア</Text>
 
-            <Group component="nav" gap="md" mt="sm">
-                <Anchor href="#About">自己紹介</Anchor>
-                <Anchor href="#career">経歴</Anchor>
-                <Anchor href="#skills">スキル</Anchor>
-                <Anchor href="#projects">プロジェクト</Anchor>
-                <Anchor href="#awards">受賞経歴</Anchor>
-                <Anchor href="#interns">インターンシップ・職歴</Anchor>
-            </Group>
+            <DarkModeToggle />
+
+            <Divider w="100%" />
+
+            <Stack component="nav" gap="xs" align="stretch" w="100%">
+                <Anchor href="#About" size="sm">自己紹介</Anchor>
+                <Anchor href="#career" size="sm">経歴</Anchor>
+                <Anchor href="#skills" size="sm">スキル</Anchor>
+                <Anchor href="#projects" size="sm">プロジェクト</Anchor>
+                <Anchor href="#awards" size="sm">受賞経歴</Anchor>
+                <Anchor href="#interns" size="sm">インターンシップ</Anchor>
+                <Anchor href="#blog" size="sm">ブログ</Anchor>
+            </Stack>
         </Stack>
     );
 };

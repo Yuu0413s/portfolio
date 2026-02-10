@@ -1,4 +1,5 @@
-import { Stack, Group, Title, Text, Center, Card } from '@mantine/core';
+import { Stack, Group, Title, Text, Center, Card, ThemeIcon, Badge } from '@mantine/core';
+import { IconTrophy, IconAward } from '@tabler/icons-react';
 
 type Award = {
     awardName: string;
@@ -42,15 +43,43 @@ const AwardSection = () => {
                 受賞経歴
             </Title>
 
-            <Stack component="ul" gap="lg" w="100%" maw={600}>
+            <Stack component="ul" gap="lg" w="100%" maw={700}>
                 {awardsData.map((award, index) => (
-                    <Card key={index}>
-                        <Group justify="space-between">
-                            <Title order={3} size="h4">{award.awardName}</Title>
-                            <Text size="sm" c="dimmed">{award.date}</Text>
+                    <Card
+                        key={index}
+                        shadow="md"
+                        padding="xl"
+                        radius="lg"
+                        withBorder
+                        className="custom-card"
+                        style={{
+                            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%)',
+                        }}
+                    >
+                        <Group gap="md" align="flex-start">
+                            <ThemeIcon
+                                size={60}
+                                radius="xl"
+                                variant="gradient"
+                                gradient={{ from: 'yellow', to: 'orange' }}
+                            >
+                                <IconTrophy size={32} />
+                            </ThemeIcon>
+
+                            <Stack gap="xs" style={{ flex: 1 }}>
+                                <Group justify="space-between" align="flex-start" wrap="nowrap">
+                                    <Title order={3} size="h3">{award.awardName}</Title>
+                                    <Badge variant="light" color="yellow" size="lg">
+                                        <IconAward size={14} style={{ marginRight: 4 }} />
+                                        受賞
+                                    </Badge>
+                                </Group>
+
+                                <Text fw={700} size="lg">{award.eventName}</Text>
+                                <Text size="sm" c="dimmed">{award.date}</Text>
+                                <Text mt="sm">{award.description}</Text>
+                            </Stack>
                         </Group>
-                        <Text fw="bold" mt="md">{award.eventName}</Text>
-                        <Text c="dimmed" mt="sm">{award.description}</Text>
                     </Card>
                 ))}
             </Stack>

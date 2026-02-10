@@ -1,4 +1,4 @@
-import { AppShell, Burger, Stack, Container, Title, Divider } from '@mantine/core';
+import { AppShell, Burger, Stack, Container, Title, Divider, CloseButton, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 // コンポーネントのインポート
@@ -9,7 +9,9 @@ import Projects from './components/projects';
 import Awards from './components/awards';
 import Interns from './components/interns';
 import Career from './components/career';
-import Links from './components/links';
+import Blog from './components/blog';
+import Footer from './components/Footer';
+import FadeInSection from './components/FadeInSection';
 
 // CSSのインポート
 import './styles.css';
@@ -22,12 +24,12 @@ function App() {
             navbar={{
                 width: 300,
                 breakpoint: 'sm',
-                collapsed: { mobile: !opened },
+                collapsed: { desktop: !opened, mobile: !opened },
             }}
             padding="md"
             styles={{
                 main: {
-                    backgroundColor: 'var(--pale-blue)',
+                    background: 'var(--gradient-bg)',
                 },
             }}
         >
@@ -39,52 +41,106 @@ function App() {
                     borderRight: 'none',
                 }}
             >
-                <Stack justify="space-between" h="100%">
+                <Stack gap="md">
+                    {opened && (
+                        <Group justify="flex-end">
+                            <CloseButton
+                                onClick={toggle}
+                                size="lg"
+                                style={{
+                                    color: 'var(--white)',
+                                }}
+                                aria-label="メニューを閉じる"
+                            />
+                        </Group>
+                    )}
                     <Header />
-                    <Links />
                 </Stack>
             </AppShell.Navbar>
 
             <AppShell.Main>
-                <Burger
-                    opened={opened}
-                    onClick={toggle}
-                    hiddenFrom="sm"
-                    size="sm"
-                />
+                <Group
+                    justify="space-between"
+                    align="center"
+                    p="md"
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        zIndex: 100,
+                        background: 'rgba(255, 255, 255, 0.95)',
+                        backdropFilter: 'blur(10px)',
+                        borderBottom: '1px solid var(--light-gray)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+                    }}
+                >
+                    <Group gap="md">
+                        <Burger
+                            opened={opened}
+                            onClick={toggle}
+                            size="md"
+                        />
+                        <Title order={4} c="var(--primary-color)" style={{ fontWeight: 700 }}>
+                            Yuta Shibata
+                        </Title>
+                    </Group>
+                </Group>
+
+                <div style={{ paddingTop: '4rem' }}></div>
 
                 <Container size="md" py="lg" className="main-content-styles">
                     <Stack gap="xl">
-                        <Stack component="section" id="About">
-                            <About />
-                        </Stack>
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="About">
+                                <About />
+                            </Stack>
+                        </FadeInSection>
 
-                        <Stack component="section" id="career">
-                            <Career />
-                        </Stack>
+                        <FadeInSection delay={0.2}>
+                            <Stack component="section" id="career">
+                                <Career />
+                            </Stack>
+                        </FadeInSection>
 
-                        <Stack component="section" id="skills">
-                            <Skills />
-                        </Stack>
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="skills">
+                                <Skills />
+                            </Stack>
+                        </FadeInSection>
 
-                        <Stack component="section" id="projects">
-                            <Title order={2}>プロジェクト</Title>
-                            <Divider />
-                            <Projects />
-                        </Stack>
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="projects">
+                                <Title order={2}>プロジェクト</Title>
+                                <Divider />
+                                <Projects />
+                            </Stack>
+                        </FadeInSection>
 
-                        <Stack component="section" id="awards">
-                            <Awards />
-                        </Stack>
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="awards">
+                                <Awards />
+                            </Stack>
+                        </FadeInSection>
 
-                        <Stack component="section" id="interns">
-                            <Title order={2}>インターンシップ</Title>
-                            <Divider />
-                            <Interns />
-                        </Stack>
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="interns">
+                                <Title order={2}>インターンシップ</Title>
+                                <Divider />
+                                <Interns />
+                            </Stack>
+                        </FadeInSection>
+
+                        <FadeInSection delay={0.1}>
+                            <Stack component="section" id="blog">
+                                <Blog />
+                            </Stack>
+                        </FadeInSection>
 
                     </Stack>
                 </Container>
+
+                <Footer />
             </AppShell.Main>
         </AppShell>
     );
