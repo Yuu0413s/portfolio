@@ -58,13 +58,13 @@ const AwardSection = () => {
                     >
                         <Group gap="md" align="flex-start">
                             <ThemeIcon
-                                size={60}
+                                size={48}
                                 radius="xl"
                                 variant="gradient"
                                 gradient={{ from: 'yellow', to: 'orange' }}
                                 style={{ flexShrink: 0 }}
                             >
-                                <IconTrophy size={32} />
+                                <IconTrophy size={26} />
                             </ThemeIcon>
 
                             <Stack gap="xs" style={{ flex: 1, minWidth: 0 }}>
@@ -76,7 +76,7 @@ const AwardSection = () => {
                                     </Badge>
                                 </Group>
 
-                                <Text fw={700} size="lg">{award.eventName}</Text>
+                                <Text fw={700} size="lg" style={{ wordBreak: 'keep-all' }}>{award.eventName}</Text>
                                 <Text size="sm" c="dimmed">{award.date}</Text>
                                 <Text mt="sm">{award.description}</Text>
                             </Stack>
