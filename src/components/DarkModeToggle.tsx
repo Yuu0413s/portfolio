@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
             onClick={() => setColorScheme(computedColorScheme === 'dark' ? 'light' : 'dark')}
             variant="default"
             size="lg"
-            aria-label="Toggle color scheme"
+            aria-label="カラースキームを切り替える"
         >
             {computedColorScheme === 'dark' ? (
                 <IconSun size={20} stroke={1.5} />

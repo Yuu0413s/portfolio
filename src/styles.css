@@ -1,28 +1,58 @@
 :root {
+    /* 固定色（モードで変えない） */
+    --white: #ffffff;
     --pale-blue: #f0f8ff;
     --sky-blue: #87ceeb;
     --deep-sky-blue: #00bfff;
-    --dark-gray: #2f4f4f;
-    --medium-gray: #696969;
-    --light-gray: #e0e0e0;
-    --white: #ffffff;
 
     --sidebar-bg: #2C3E50;
     --sidebar-text: #ECF0F1;
     --sidebar-text-secondary: #95A5A6;
     --sidebar-active-bg: #34495E;
 
-    /* 新しいアクセントカラー */
     --primary-color: #3498DB;
     --secondary-color: #2C3E50;
     --accent-color: #E74C3C;
     --success-color: #27AE60;
     --warning-color: #F39C12;
 
-    /* グラデーション */
     --gradient-bg: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
     --gradient-primary: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
     --gradient-accent: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+
+    /* 用途別セマンティック変数 */
+    --color-bg-surface: #ffffff;
+    --color-text-primary: #2f4f4f;
+    --color-text-on-dark: #ffffff;
+    --color-border: #e0e0e0;
+    --color-header-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-mantine-color-scheme="dark"] {
+    --pale-blue: #1a2a3a;
+    --sky-blue: #4a9eca;
+    --deep-sky-blue: #2196f3;
+    --sidebar-bg: #1a2332;
+    --sidebar-text: #cfd8dc;
+    --sidebar-text-secondary: #78909c;
+    --sidebar-active-bg: #263545;
+
+    --primary-color: #5dade2;
+    --secondary-color: #aed6f1;
+    --accent-color: #e57373;
+    --success-color: #66bb6a;
+    --warning-color: #ffa726;
+
+    --gradient-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --gradient-primary: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    --gradient-accent: linear-gradient(135deg, #e57373 0%, #c62828 100%);
+
+    /* 用途別セマンティック変数（ダーク） */
+    --color-bg-surface: #1e2a3a;
+    --color-text-primary: #e0e0e0;
+    --color-text-on-dark: #ffffff;
+    --color-border: #37474f;
+    --color-header-bg: rgba(26, 35, 50, 0.95);
 }
 
 body {
@@ -32,7 +62,7 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--medium-gray);
+    color: var(--color-text-primary);
     line-height: 1.6;
 }
 
@@ -75,7 +105,7 @@ body {
 .main-content-styles h4,
 .main-content-styles h5,
 .main-content-styles h6 {
-    color: var(--dark-gray);
+    color: var(--color-text-primary);
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -92,8 +122,8 @@ body {
 }
 
 .main-content-styles .custom-card {
-    background-color: var(--white);
-    border: 1px solid var(--light-gray);
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 1.5rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
@@ -107,7 +137,7 @@ body {
 
 .main-content-styles hr {
     border: none;
-    border-top: 1px solid var(--light-gray);
+    border-top: 1px solid var(--color-border);
     margin: 2rem 0;
 }
 
