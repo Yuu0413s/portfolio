@@ -1,5 +1,5 @@
 import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Progress, Divider } from '@mantine/core';
-import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker } from '@tabler/icons-react';
+import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker, IconBrandGit } from '@tabler/icons-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -64,6 +64,13 @@ const mainSkills = [
         description: "先輩後輩マッチングBotをTypeScript（Slack Bolt）で開発・運用",
         icon: <IconBrandSlack size={28} />,
         color: "#36C5F0",
+    },
+    {
+        name: "Git / GitHub",
+        level: 65,
+        description: "個人・チーム開発でのブランチ管理・PR・コードレビューを日常的に実施",
+        icon: <IconBrandGit size={28} />,
+        color: "#F05032",
     },
 ];
 

@@ -23,11 +23,11 @@ const careerData = [
         active: true,
     },
     {
-        date: '2025/12 ~ 現在',
+        date: '2025/12 ~ 2026/04',
         title: '株式会社A.I Consulting',
         description: 'フルスタックエンジニア（バックエンド中心・インターン）',
         type: 'work',
-        active: true,
+        active: false,
     },
 ];
 
