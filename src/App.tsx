@@ -69,9 +69,9 @@ function App() {
                         left: 0,
                         right: 0,
                         zIndex: 100,
-                        background: 'rgba(255, 255, 255, 0.95)',
+                        background: 'var(--color-header-bg)',
                         backdropFilter: 'blur(10px)',
-                        borderBottom: '1px solid var(--light-gray)',
+                        borderBottom: '1px solid var(--color-border)',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
                     }}
                 >
@@ -92,7 +92,7 @@ function App() {
                 <Container size="md" py="lg" className="main-content-styles">
                     <Stack gap="xl">
                         <FadeInSection delay={0.1}>
-                            <Stack component="section" id="About">
+                            <Stack component="section" id="about">
                                 <About />
                             </Stack>
                         </FadeInSection>
