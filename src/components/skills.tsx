@@ -1,66 +1,81 @@
-import { Stack, Title, Text, Card, Rating, Group, ThemeIcon, Progress, Tooltip } from '@mantine/core';
-import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand } from '@tabler/icons-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Progress, Divider } from '@mantine/core';
+import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker } from '@tabler/icons-react';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const skills = [
+const mainSkills = [
     {
-        name: "Python",
-        rating: 3,
-        level: 60,
-        description: "データ分析・web開発。pandas, numpy, streamlitを使用",
-        icon: <IconBrandPython size={28} />,
-        color: "#3776AB",
+        name: "Cloudflare Workers",
+        level: 45,
+        description: "小説検索＆推薦システムのバックエンドをCloudflare Workers + D1 + Vectorizeで構築",
+        icon: <IconServer size={28} />,
+        color: "#F6821F",
     },
     {
-        name: "SQL",
-        rating: 1,
-        level: 20,
-        description: "データベース設計・データ抽出。postgreSQL, SQLiteを使用",
-        icon: <IconDatabase size={28} />,
-        color: "#336791",
+        name: "API設計・統合",
+        level: 50,
+        description: "5種類の外部APIを統合し、リトライ・指数バックオフによる堅牢な通信処理を実装",
+        icon: <IconPlug size={28} />,
+        color: "#5C6BC0",
     },
     {
-        name: "HTML/CSS",
-        rating: 3,
-        level: 60,
-        description: "webサイト作成",
-        icon: <IconBrandHtml5 size={28} />,
-        color: "#E34F26",
+        name: "ベクトル検索",
+        level: 35,
+        description: "Gemini Embedding APIで768次元ベクトルを生成しCloudflare Vectorizeでセマンティック検索を実装",
+        icon: <IconSearch size={28} />,
+        color: "#9C27B0",
     },
     {
         name: "JavaScript/TypeScript",
-        rating: 3,
         level: 60,
-        description: "フロントエンド開発。Vanilla JS/TSからReactまで経験",
+        description: "React + Viteでのポートフォリオ・Webアプリ開発経験あり",
         icon: (
             <Group gap={4}>
-                <IconBrandJavascript size={24} />
-                <IconBrandTypescript size={24} />
+                <IconBrandJavascript size={22} />
+                <IconBrandTypescript size={22} />
             </Group>
         ),
         color: "#3178C6",
     },
     {
-        name: "Next.js",
-        rating: 2,
-        level: 40,
-        description: "Vercelを用いたdeployが可能。",
-        icon: <IconBrandNextjs size={28} />,
-        color: "#000000",
+        name: "Python",
+        level: 60,
+        description: "pandasでのデータ分析・機械学習モデル構築経験あり",
+        icon: <IconBrandPython size={28} />,
+        color: "#3776AB",
     },
     {
-        name: "ローコード/ノーコード",
-        rating: 2,
-        level: 20,
-        description: "ローコード/ノーコードツールを使用したwebサイト開発",
-        icon: <IconWand size={28} />,
-        color: "#7B68EE",
-    }
+        name: "HTML/CSS",
+        level: 60,
+        description: "Mantine UIを使ったレスポンシブWebアプリ開発経験あり",
+        icon: <IconBrandHtml5 size={28} />,
+        color: "#E34F26",
+    },
+    {
+        name: "Convex",
+        level: 35,
+        description: "MyFitCoachのバックエンドをConvexで実装（初めてのBaaS活用）",
+        icon: <IconDatabase size={28} />,
+        color: "#FF6154",
+    },
+    {
+        name: "Slack Bot開発",
+        level: 40,
+        description: "先輩後輩マッチングBotをTypeScript（Slack Bolt）で開発・運用",
+        icon: <IconBrandSlack size={28} />,
+        color: "#36C5F0",
+    },
 ];
 
-const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
+const learningSkills = [
+    { name: "SQL", icon: <IconDatabase size={14} /> },
+    { name: "Next.js", icon: <IconBrandNextjs size={14} /> },
+    { name: "ローコード/ノーコード", icon: <IconWand size={14} /> },
+    { name: "PostgreSQL", icon: <IconDatabase size={14} /> },
+    { name: "Docker", icon: <IconBrandDocker size={14} /> },
+];
+
+const SkillCard = ({ skill, index }: { skill: typeof mainSkills[0]; index: number }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
@@ -80,46 +95,34 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
                 className="custom-card"
                 style={{ height: '100%' }}
             >
-                <Group justify="space-between" align="flex-start" wrap="nowrap">
-                    <Group gap="md">
-                        <ThemeIcon
-                            size={50}
-                            radius="md"
-                            variant="light"
-                            color={skill.color}
-                        >
-                            {skill.icon}
-                        </ThemeIcon>
-                        <Stack gap="xs" style={{ flex: 1 }}>
-                            <Title order={3} size="h4">{skill.name}</Title>
-                            <Rating value={skill.rating} readOnly size="sm" />
-                        </Stack>
-                    </Group>
+                <Group gap="md" align="center">
+                    <ThemeIcon
+                        size={50}
+                        radius="md"
+                        variant="light"
+                        color={skill.color}
+                    >
+                        {skill.icon}
+                    </ThemeIcon>
+                    <Title order={3} size="h4">{skill.name}</Title>
                 </Group>
 
                 <Text c="dimmed" mt="md" size="sm">{skill.description}</Text>
 
-                <Stack gap="xs" mt="md">
-                    <Group justify="space-between">
-                        <Text size="xs" fw={500}>習熟度</Text>
-                        <Tooltip label={`${skill.level}%`} position="top">
-                            <Text size="xs" c="dimmed">{skill.level}%</Text>
-                        </Tooltip>
-                    </Group>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: '100%' } : {}}
-                        transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                    >
-                        <Progress
-                            value={skill.level}
-                            color={skill.color}
-                            size="md"
-                            radius="xl"
-                            animated
-                        />
-                    </motion.div>
-                </Stack>
+                <motion.div
+                    initial={{ width: 0 }}
+                    animate={isInView ? { width: '100%' } : {}}
+                    transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
+                    style={{ marginTop: '1rem' }}
+                >
+                    <Progress
+                        value={skill.level}
+                        color={skill.color}
+                        size="md"
+                        radius="xl"
+                        animated
+                    />
+                </motion.div>
             </Card>
         </motion.div>
     );
@@ -127,7 +130,7 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
 
 const SkillsSection = () => {
     return (
-        <Stack component="section" id="skills" align="center" gap="lg">
+        <Stack component="section" align="center" gap="lg">
             <Title order={2}>
                 スキル
             </Title>
@@ -141,10 +144,25 @@ const SkillsSection = () => {
                 padding: 0,
                 alignItems: 'stretch',
             }}>
-                {skills.map((skill, index) => (
+                {mainSkills.map((skill, index) => (
                     <SkillCard key={skill.name} skill={skill} index={index} />
                 ))}
             </div>
+
+            <Divider w="100%" label="学習中" labelPosition="center" />
+
+            <Group gap="sm" justify="center">
+                {learningSkills.map((skill) => (
+                    <Badge
+                        key={skill.name}
+                        variant="outline"
+                        size="lg"
+                        leftSection={skill.icon}
+                    >
+                        {skill.name}
+                    </Badge>
+                ))}
+            </Group>
         </Stack>
     );
 };
