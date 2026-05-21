@@ -26,7 +26,7 @@ const awardsData: Award[] = [
 const AwardSection = () => {
     if (awardsData.length === 0) {
         return (
-            <Stack component="section" id="awards" w="100%" align="center" gap="lg">
+            <Stack component="section" w="100%" align="center" gap="lg">
                 <Title order={2}>
                     受賞経歴
                 </Title>
@@ -38,7 +38,7 @@ const AwardSection = () => {
     }
 
     return (
-        <Stack component="section" id="awards" w="100%" align="center" gap="lg">
+        <Stack component="section" w="100%" align="center" gap="lg">
             <Title order={2}>
                 受賞経歴
             </Title>
@@ -53,7 +53,7 @@ const AwardSection = () => {
                         withBorder
                         className="custom-card"
                         style={{
-                            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%)',
+                            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--color-bg-surface) 100%)',
                         }}
                     >
                         <Group gap="md" align="flex-start">

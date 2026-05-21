@@ -58,7 +58,7 @@ const BlogSection = () => {
     }, []);
 
     return (
-        <Stack component="section" id="blog" align="center" gap="lg">
+        <Stack component="section" align="center" gap="lg">
             <Title order={2}>ブログ</Title>
 
             <Text c="dimmed" ta="center" maw={600}>
@@ -71,7 +71,19 @@ const BlogSection = () => {
                 </Center>
             ) : error ? (
                 <Center p="xl">
-                    <Text c="red">{error}</Text>
+                    <Stack align="center" gap="md">
+                        <Text c="red">{error}</Text>
+                        <Button
+                            component="a"
+                            href="https://note.com/yuu_0413"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="outline"
+                            leftSection={<IconNotebook size={18} />}
+                        >
+                            noteで読む
+                        </Button>
+                    </Stack>
                 </Center>
             ) : (
                 <Stack gap="lg" w="100%" maw={700}>
