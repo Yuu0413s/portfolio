@@ -108,7 +108,7 @@ const AboutSection = () => {
                         <Stack gap="xs" align="center">
                             <Text size="sm" fw={600} c="dimmed">Connect</Text>
                             <Group gap="md">
-                                {linksData.map((link) => {
+                                {linksData.filter((link) => link.type !== 'email').map((link) => {
                                     const LinkIcon = link.icon;
                                     return (
                                         <Anchor
