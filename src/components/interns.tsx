@@ -27,7 +27,7 @@ export const INTERNSHIP_LIST: Internship[] = [
         companyName: "株式会社A.I Consulting",
         internshipTitle: "株式会社A.I Consulting",
         period: "2025年12月 ~",
-        description: "フルスタックエンジニアとして、様々な開発を行っている。",
+        description: "フルスタックエンジニア（バックエンド中心）として、様々な開発を行っている。",
     },
 ];
 

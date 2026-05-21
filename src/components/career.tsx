@@ -18,14 +18,14 @@ const careerData = [
     {
         date: '2025/09 ~ 現在',
         title: 'LITALICOワンダー新宿教室',
-        description: '講師(インターン)',
+        description: '講師（インターン）',
         type: 'work',
         active: true,
     },
     {
         date: '2025/12 ~ 現在',
         title: '株式会社A.I Consulting',
-        description: 'フルスタックエンジニア(インターン)',
+        description: 'フルスタックエンジニア（バックエンド中心・インターン）',
         type: 'work',
         active: true,
     },
@@ -33,7 +33,7 @@ const careerData = [
 
 const CareerSection = () => {
     return (
-        <Stack component="section" id="career" align="center" gap="lg">
+        <Stack component="section" align="center" gap="lg">
             <Title order={2}>
                 学歴・職歴
             </Title>
