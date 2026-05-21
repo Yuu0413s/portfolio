@@ -17,7 +17,7 @@ const GeekCamp = () => {
             </Stack>
 
             <AspectRatio ratio={16 / 9} w="100%">
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUSCuSpi9J3i8mAJAhVi3zYuWzawlmkby_GjCAe3KgoWSvRfLEpByGubbTBGTauA/pubembed?start=true&loop=false&delayms=3000" frameBorder="0" width="1280" height="749" allowFullScreen={true}></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUSCuSpi9J3i8mAJAhVi3zYuWzawlmkby_GjCAe3KgoWSvRfLEpByGubbTBGTauA/pubembed?start=true&loop=false&delayms=3000" title="GeekCamp 2025 Vol.8 発表スライド" style={{ border: 'none' }} width="1280" height="749" allowFullScreen={true}></iframe>
             </AspectRatio>
         </Stack>
     );

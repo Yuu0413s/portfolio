@@ -17,7 +17,7 @@ const MudsHackathon = () => {
             </Stack>
 
             <AspectRatio ratio={16 / 9} w="100%">
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSxpn-VlB6r6i8TZ5tAEOjTESY6BHdtbxiK9zxr1_KxwXWpK_L8wFI67VVPiNRew56bHWIhm22rxIuI/pubembed?start=true&loop=false&delayms=3000" frameBorder="0" width="960" height="569" allowFullScreen={true}></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSxpn-VlB6r6i8TZ5tAEOjTESY6BHdtbxiK9zxr1_KxwXWpK_L8wFI67VVPiNRew56bHWIhm22rxIuI/pubembed?start=true&loop=false&delayms=3000" title="MUDS Hackathon 発表スライド" style={{ border: 'none' }} width="960" height="569" allowFullScreen={true}></iframe>
             </AspectRatio>
         </Stack>
     );

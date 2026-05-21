@@ -4,7 +4,7 @@ const MudsHackathon_vol2 = () => {
     return (
         <Stack align="flex-start" gap="md">
             <Text>
-                某要因で激減してしまった先輩後輩間のか変わりを増やし、大学コミュニティを活発にするためのSlack Botを制作
+                某要因で激減してしまった先輩後輩間の関わりを増やし、大学コミュニティを活発にするためのSlack Botを制作
             </Text>
 
             <Divider w="100%" />
@@ -17,7 +17,7 @@ const MudsHackathon_vol2 = () => {
             </Stack>
 
             <AspectRatio ratio={16 / 9} w="100%">
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ3cDbC8zF-XOiULpZ1rlIDqTDR8NcBVDazmhMGUZonacCiONe_UAO27grvHYZ_td0DukOrUQ1dbli8/pubembed?start=false&loop=false&delayms=3000" frameBorder="0" width="960" height="569" allowFullScreen={true} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ3cDbC8zF-XOiULpZ1rlIDqTDR8NcBVDazmhMGUZonacCiONe_UAO27grvHYZ_td0DukOrUQ1dbli8/pubembed?start=false&loop=false&delayms=3000" title="MUDS Hackathon Vol.2 発表スライド" style={{ border: 'none' }} width="960" height="569" allowFullScreen={true} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </AspectRatio>
         </Stack>
     );
