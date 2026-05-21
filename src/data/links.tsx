@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { IconMail, IconBrandGithub, IconBrandX, IconNotebook, IconBook } from '@tabler/icons-react';
+import { IconMail, IconBrandGithub, IconBrandX, IconNotebook, IconBook, IconPencil } from '@tabler/icons-react';
 
 export type LinkItem = {
     type: 'email' | 'link';
@@ -32,7 +32,7 @@ export const linksData: LinkItem[] = [
         type: 'link',
         label: 'X (Twitter)',
         ariaLabel: 'X（Twitter）プロフィールを見る',
-        url: 'https://x.com/Yuu_s0413',
+        url: 'https://x.com/Yuu0413_s',
         icon: IconBrandX,
         color: '#1DA1F2',
     },
@@ -51,5 +51,13 @@ export const linksData: LinkItem[] = [
         url: 'https://qiita.com/yuu_0413',
         icon: IconBook,
         color: '#55C500',
+    },
+    {
+        type: 'link',
+        label: 'Zenn',
+        ariaLabel: 'Zennを見る',
+        url: 'https://zenn.dev/yuu_0413',
+        icon: IconPencil,
+        color: '#3EA8FF',
     },
 ];
