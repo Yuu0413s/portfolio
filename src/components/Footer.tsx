@@ -1,5 +1,6 @@
-import { Stack, Group, Text, ActionIcon, Anchor, Divider } from '@mantine/core';
-import { IconBrandGithub, IconBrandX, IconMail, IconArrowUp } from '@tabler/icons-react';
+import { Stack, Group, Text, ActionIcon, Anchor, Divider, Title, ThemeIcon } from '@mantine/core';
+import { IconArrowUp } from '@tabler/icons-react';
+import { linksData } from '../data/links';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -20,48 +21,66 @@ const Footer = () => {
             }}
         >
             <Stack align="center" gap="md">
-                <Group gap="md">
-                    <Anchor href="mailto:y.shibata0820@gmail.com">
-                        <ActionIcon
-                            size="lg"
-                            radius="md"
-                            variant="light"
-                            color="red"
-                            style={{ transition: 'transform 0.2s ease' }}
-                            className="footer-icon"
-                        >
-                            <IconMail size={20} />
-                        </ActionIcon>
-                    </Anchor>
+                <Stack gap="md" w="100%" maw={360}>
+                    <Divider
+                        label={<Title order={3} size="h5" c="var(--color-text-on-dark)">Connect</Title>}
+                        labelPosition="center"
+                        color="rgba(255, 255, 255, 0.2)"
+                    />
 
-                    <Anchor href="https://github.com/Yuu0413s" target="_blank" rel="noopener noreferrer">
-                        <ActionIcon
-                            size="lg"
-                            radius="md"
-                            variant="light"
-                            color="gray"
-                            style={{ transition: 'transform 0.2s ease' }}
-                            className="footer-icon"
-                        >
-                            <IconBrandGithub size={20} />
-                        </ActionIcon>
-                    </Anchor>
+                    <Stack gap="xs">
+                        {linksData.map((link) => {
+                            const LinkIcon = link.icon;
+                            return (
+                                <Group
+                                    key={link.label}
+                                    gap="sm"
+                                    style={{
+                                        padding: '0.5rem',
+                                        borderRadius: '8px',
+                                        backgroundColor: 'var(--color-bg-surface)',
+                                        border: '1px solid var(--color-border)',
+                                        transition: 'background-color 0.2s ease',
+                                    }}
+                                >
+                                    <ThemeIcon
+                                        size={36}
+                                        radius="md"
+                                        variant="light"
+                                        color={link.color}
+                                    >
+                                        <LinkIcon size={20} />
+                                    </ThemeIcon>
 
-                    <Anchor href="https://x.com/Yuu_s0413" target="_blank" rel="noopener noreferrer">
-                        <ActionIcon
-                            size="lg"
-                            radius="md"
-                            variant="light"
-                            color="blue"
-                            style={{ transition: 'transform 0.2s ease' }}
-                            className="footer-icon"
-                        >
-                            <IconBrandX size={20} />
-                        </ActionIcon>
-                    </Anchor>
-                </Group>
-
-                <Divider w="100%" maw={300} color="rgba(255, 255, 255, 0.2)" />
+                                    {link.type === 'email' ? (
+                                        <Stack gap={0} style={{ flex: 1 }}>
+                                            <Text size="xs" c="dimmed">{link.label}</Text>
+                                            <Text size="sm" c="var(--color-text-primary)" style={{ wordBreak: 'break-all' }}>
+                                                {link.value}
+                                            </Text>
+                                        </Stack>
+                                    ) : (
+                                        <Anchor
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={link.ariaLabel}
+                                            style={{
+                                                flex: 1,
+                                                color: 'var(--color-text-primary)',
+                                                textDecoration: 'none',
+                                            }}
+                                        >
+                                            <Text size="sm" fw={500}>
+                                                {link.label}
+                                            </Text>
+                                        </Anchor>
+                                    )}
+                                </Group>
+                            );
+                        })}
+                    </Stack>
+                </Stack>
 
                 <Text size="sm" c="dimmed" ta="center">
                     © {currentYear} 柴田 優太. All rights reserved.
