@@ -68,8 +68,8 @@ const AwardSection = () => {
                                     <IconTrophy size={24} />
                                 </ThemeIcon>
                                 <Title order={3} size="h3" style={{ flex: 1 }}>{award.awardName}</Title>
-                                <Badge variant="light" color="yellow" size="lg" style={{ flexShrink: 0 }}>
-                                    <IconAward size={14} style={{ marginRight: 4 }} />
+                                <Badge variant="light" color="yellow" style={{ flexShrink: 0 }}>
+                                    <IconAward size={12} style={{ marginRight: 4 }} />
                                     受賞
                                 </Badge>
                             </Group>
