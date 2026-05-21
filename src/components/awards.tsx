@@ -62,13 +62,14 @@ const AwardSection = () => {
                                 radius="xl"
                                 variant="gradient"
                                 gradient={{ from: 'yellow', to: 'orange' }}
+                                style={{ flexShrink: 0 }}
                             >
                                 <IconTrophy size={32} />
                             </ThemeIcon>
 
-                            <Stack gap="xs" style={{ flex: 1 }}>
-                                <Group justify="space-between" align="flex-start" wrap="nowrap">
-                                    <Title order={3} size="h3">{award.awardName}</Title>
+                            <Stack gap="xs" style={{ flex: 1, minWidth: 0 }}>
+                                <Group justify="space-between" align="flex-start" wrap="wrap">
+                                    <Title order={3} size="h3" style={{ wordBreak: 'keep-all' }}>{award.awardName}</Title>
                                     <Badge variant="light" color="yellow" size="lg">
                                         <IconAward size={14} style={{ marginRight: 4 }} />
                                         受賞
