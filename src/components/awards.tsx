@@ -56,31 +56,28 @@ const AwardSection = () => {
                             background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--color-bg-surface) 100%)',
                         }}
                     >
-                        <Group gap="md" align="flex-start">
-                            <ThemeIcon
-                                size={48}
-                                radius="xl"
-                                variant="gradient"
-                                gradient={{ from: 'yellow', to: 'orange' }}
-                                style={{ flexShrink: 0 }}
-                            >
-                                <IconTrophy size={26} />
-                            </ThemeIcon>
+                        <Stack gap="sm">
+                            <Group gap="sm" align="center" wrap="nowrap">
+                                <ThemeIcon
+                                    size={44}
+                                    radius="xl"
+                                    variant="gradient"
+                                    gradient={{ from: 'yellow', to: 'orange' }}
+                                    style={{ flexShrink: 0 }}
+                                >
+                                    <IconTrophy size={24} />
+                                </ThemeIcon>
+                                <Title order={3} size="h3" style={{ flex: 1 }}>{award.awardName}</Title>
+                                <Badge variant="light" color="yellow" size="md" style={{ flexShrink: 0 }}>
+                                    <IconAward size={12} style={{ marginRight: 4 }} />
+                                    受賞
+                                </Badge>
+                            </Group>
 
-                            <Stack gap="xs" style={{ flex: 1, minWidth: 0 }}>
-                                <Group justify="space-between" align="flex-start" wrap="wrap">
-                                    <Title order={3} size="h3" style={{ wordBreak: 'keep-all' }}>{award.awardName}</Title>
-                                    <Badge variant="light" color="yellow" size="lg">
-                                        <IconAward size={14} style={{ marginRight: 4 }} />
-                                        受賞
-                                    </Badge>
-                                </Group>
-
-                                <Text fw={700} size="lg" style={{ wordBreak: 'keep-all' }}>{award.eventName}</Text>
-                                <Text size="sm" c="dimmed">{award.date}</Text>
-                                <Text mt="sm">{award.description}</Text>
-                            </Stack>
-                        </Group>
+                            <Text fw={700} size="md">{award.eventName}</Text>
+                            <Text size="sm" c="dimmed">{award.date}</Text>
+                            <Text size="sm" mt="xs">{award.description}</Text>
+                        </Stack>
                     </Card>
                 ))}
             </Stack>
