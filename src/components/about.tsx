@@ -1,6 +1,7 @@
 import { Stack, Group, Title, Text, Image, Card, Badge, Button, ActionIcon, Anchor } from '@mantine/core';
-import { IconChevronDown, IconMail, IconBrandGithub, IconBrandX } from '@tabler/icons-react';
+import { IconChevronDown } from '@tabler/icons-react';
 import icon from "../assets/icon.jpeg";
+import { linksData } from '../data/links';
 
 const AboutSection = () => {
     const scrollToProjects = () => {
@@ -31,14 +32,14 @@ const AboutSection = () => {
     const age = calculateAge();
 
     return (
-        <Stack component="section" id="about" align="center" gap="xl" className="hero-section">
+        <Stack component="section" align="center" gap="xl" className="hero-section">
             <Card
                 shadow="lg"
                 padding="xl"
                 radius="lg"
                 withBorder
                 style={{
-                    background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%)',
+                    background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, var(--color-bg-surface) 100%)',
                     borderColor: 'var(--primary-color)',
                     borderWidth: 2,
                 }}
@@ -47,7 +48,7 @@ const AboutSection = () => {
                 <Stack align="center" gap="xl">
                     <Image
                         src={icon}
-                        alt="Portfolio Icon"
+                        alt="柴田優太のプロフィール写真"
                         w={120}
                         h={120}
                         radius="100%"
@@ -63,15 +64,15 @@ const AboutSection = () => {
                         </Title>
 
                         <Badge size="lg" variant="gradient" gradient={{ from: 'teal', to: 'lime' }}>
-                            フルスタックエンジニア
+                            バックエンドエンジニア志望
                         </Badge>
 
-                        <Title order={2} size="1.5rem" ta="center" c="var(--dark-gray)" fw={500} style={{ fontStyle: 'italic' }}>
+                        <Title order={2} size="1.5rem" ta="center" c="var(--color-text-primary)" fw={500} style={{ fontStyle: 'italic' }}>
                             少しでも多くの人が幸せに、また快適に過ごせる世界を
                         </Title>
                     </Stack>
 
-                    <Stack component="blockquote" gap="md" align="flex-start" w="100%" maw={600}>
+                    <Stack component="section" gap="md" align="flex-start" w="100%" maw={600}>
                         <Title order={3} size="h4" c="var(--primary-color)">About Me</Title>
                         <Group gap="md">
                             <Text fw="bold" size="sm">年齢:</Text>
@@ -107,50 +108,31 @@ const AboutSection = () => {
                         <Stack gap="xs" align="center">
                             <Text size="sm" fw={600} c="dimmed">Connect</Text>
                             <Group gap="md">
-                                <Anchor href="mailto:y.shibata0820@gmail.com">
-                                    <ActionIcon
-                                        size="xl"
-                                        radius="md"
-                                        variant="light"
-                                        color="red"
-                                        style={{
-                                            transition: 'transform 0.2s ease',
-                                        }}
-                                        className="connect-icon"
-                                    >
-                                        <IconMail size={24} />
-                                    </ActionIcon>
-                                </Anchor>
-
-                                <Anchor href="https://github.com/Yuu0413s" target="_blank" rel="noopener noreferrer">
-                                    <ActionIcon
-                                        size="xl"
-                                        radius="md"
-                                        variant="light"
-                                        color="gray"
-                                        style={{
-                                            transition: 'transform 0.2s ease',
-                                        }}
-                                        className="connect-icon"
-                                    >
-                                        <IconBrandGithub size={24} />
-                                    </ActionIcon>
-                                </Anchor>
-
-                                <Anchor href="https://x.com/Yuu_s0413" target="_blank" rel="noopener noreferrer">
-                                    <ActionIcon
-                                        size="xl"
-                                        radius="md"
-                                        variant="light"
-                                        color="blue"
-                                        style={{
-                                            transition: 'transform 0.2s ease',
-                                        }}
-                                        className="connect-icon"
-                                    >
-                                        <IconBrandX size={24} />
-                                    </ActionIcon>
-                                </Anchor>
+                                {linksData.map((link) => {
+                                    const LinkIcon = link.icon;
+                                    return (
+                                        <Anchor
+                                            key={link.label}
+                                            href={link.type === 'email' ? `mailto:${link.value}` : link.url}
+                                            target={link.type === 'link' ? '_blank' : undefined}
+                                            rel={link.type === 'link' ? 'noopener noreferrer' : undefined}
+                                        >
+                                            <ActionIcon
+                                                size="lg"
+                                                radius="md"
+                                                variant="light"
+                                                color={link.color}
+                                                style={{
+                                                    transition: 'transform 0.2s ease',
+                                                }}
+                                                className="connect-icon"
+                                                aria-label={link.ariaLabel}
+                                            >
+                                                <LinkIcon size={20} />
+                                            </ActionIcon>
+                                        </Anchor>
+                                    );
+                                })}
                             </Group>
                         </Stack>
                     </Stack>
