@@ -333,6 +333,7 @@ const Projects = () => {
             }
             grouped[project.year].push(project);
         });
+        Object.values(grouped).forEach((projects) => projects.reverse());
         return grouped;
     };
 
