@@ -1,5 +1,5 @@
 import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Progress, Divider } from '@mantine/core';
-import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker, IconBrandGit } from '@tabler/icons-react';
+import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker, IconBrandGit, IconBrandAzure, IconBrandSupabase, IconBrandNodejs, IconFileText, IconBrandCloudflare, IconBrandGoogleMaps, IconShieldCheck, IconStack, IconBolt, IconRoute } from '@tabler/icons-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -28,7 +28,7 @@ const mainSkills = [
     {
         name: "JavaScript/TypeScript",
         level: 60,
-        description: "React + Viteでのポートフォリオ・Webアプリ開発経験あり",
+        description: "React + Viteでのポートフォリオ・Webアプリ開発、React Nativeによるスマホ開発、Honoによるバックエンド開発（API作成・テスト作成と実行）の経験あり",
         icon: (
             <Group gap={4}>
                 <IconBrandJavascript size={22} />
@@ -80,6 +80,22 @@ const learningSkills = [
     { name: "ローコード/ノーコード", icon: <IconWand size={14} /> },
     { name: "PostgreSQL", icon: <IconDatabase size={14} /> },
     { name: "Docker", icon: <IconBrandDocker size={14} /> },
+    { name: "Azure OpenAI", icon: <IconBrandAzure size={14} /> },
+    { name: "Azure AI Search", icon: <IconBrandAzure size={14} /> },
+    { name: "Expo Router", icon: <IconRoute size={14} /> },
+    { name: "pandas", icon: <IconBrandPython size={14} /> },
+    { name: "scikit-learn", icon: <IconBrandPython size={14} /> },
+    { name: "LightGBM", icon: <IconBrandPython size={14} /> },
+    { name: "Supabase", icon: <IconBrandSupabase size={14} /> },
+    { name: "Node.js", icon: <IconBrandNodejs size={14} /> },
+    { name: "LaTeX", icon: <IconFileText size={14} /> },
+    { name: "Drizzle ORM", icon: <IconDatabase size={14} /> },
+    { name: "Neon", icon: <IconDatabase size={14} /> },
+    { name: "Better Auth", icon: <IconShieldCheck size={14} /> },
+    { name: "Cloudflare R2", icon: <IconBrandCloudflare size={14} /> },
+    { name: "Google Maps API", icon: <IconBrandGoogleMaps size={14} /> },
+    { name: "Turborepo", icon: <IconStack size={14} /> },
+    { name: "Bun", icon: <IconBolt size={14} /> },
 ];
 
 const SkillCard = ({ skill, index }: { skill: typeof mainSkills[0]; index: number }) => {
