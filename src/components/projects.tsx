@@ -8,6 +8,8 @@ import GeekCamp from "../contents/projects/geekcamp-2025v8";
 import OC2025 from "../contents/projects/oc-2025-08";
 import MudsHackathon_vol2 from '../contents/projects/muds-hackathon-Vol2';
 import Deim2026 from '../contents/projects/deim2026';
+import MicrosoftAgenticHackathon from '../contents/projects/microsoft-agentic-hackathon';
+import MudsHackathon_vol3 from '../contents/projects/muds-hackathon-Vol3';
 
 type ProjectData = {
     slug: string;
@@ -119,6 +121,37 @@ export const PROJECT_LIST: ProjectData[] = [
         siteLabel: "発表ページを見る",
         type: "solo",
         category: "研究発表",
+    },
+    {
+        slug: "microsoft-agentic-hackathon-2026",
+        title: "Microsoft Agentic Hackathon",
+        description: "Microsoft主催のハッカソン。実務で即使用可能な業務改善・効率化AIエージェントシステムを作成",
+        date: "事前開発期間 2026/04/17~06/01",
+        year: 2026,
+        component: MicrosoftAgenticHackathon,
+        icon: <IconAward size={24} />,
+        role: "バックエンド（APIエンドポイント作成・テスト実行）",
+        techStack: ["Azure OpenAI", "Azure AI Search", "PostgreSQL", "React", "Next.js"],
+        challenge: "初めての大型ハッカソンということで、今まで参加したことのないタイプのハッカソン、かつすごいメンバーだったため、とにかく参加して色々なことを学びたい、また知見を増やして就活の幅を広げたいという思いで取り組んだ",
+        outcome: "書類選考の結果、本戦（発表予定日 2026/06/17）には進出できず出場なし",
+        siteUrl: "https://decision-loop-web.azurewebsites.net",
+        type: "team",
+        category: "ハッカソン",
+    },
+    {
+        slug: "muds-hackathon-2026-vol3",
+        title: "第3回 MUDS 学内ハッカソン",
+        description: "友人同士で気軽に美味しかったご飯を写真付きで共有できるSNS「know-your-meals」を制作",
+        date: "事前開発期間 2026/07/03~07/10, 発表 2026/07/11",
+        year: 2026,
+        component: MudsHackathon_vol3,
+        icon: <IconAward size={24} />,
+        role: "バックエンド・API設計",
+        techStack: ["React Native", "Expo Router", "TypeScript", "Hono", "Drizzle ORM", "Neon", "Better Auth", "Cloudflare R2", "Google Maps API", "Turborepo", "Bun"],
+        challenge: "短期間でチームメンバーと役割を分担しながら、要件定義から実装・発表まで完遂させた。また1年前と同じチームメンバーで出場することで、自分がどれだけ成長したかを測りたかった。",
+        siteUrl: "https://know-your-meals.com",
+        type: "team",
+        category: "ハッカソン",
     },
 ];
 

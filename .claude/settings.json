@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /Users/yuu0413/projects/private/portfolio/src/assets/icon.jpeg /Users/yuu0413/projects/private/portfolio/public/icon.jpeg && echo \"copied\")",
+      "Bash(npm uninstall *)",
+      "Bash(npm run *)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio status)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio diff --stat HEAD)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add index.html public/icon.jpeg)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio commit -m ' *)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add package.json package-lock.json pnpm-lock.yaml)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/styles.css src/components/DarkModeToggle.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/data/ src/components/links.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/about.tsx src/components/header.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/Footer.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/App.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/blog.tsx src/components/awards.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/career.tsx src/components/interns.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/skills.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/projects.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/contents/projects/deim2026.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/contents/projects/oc-2025-08.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/contents/projects/geekcamp-2025v8.tsx src/contents/projects/muds-hackathon-Vol2.tsx src/contents/projects/muds-hackathon.tsx src/contents/projects/smbc-challenge.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio push portfolio main)",
+      "Bash(node -e \"const t = require\\('@tabler/icons-react'\\); console.log\\(Object.keys\\(t\\).filter\\(k => k.toLowerCase\\(\\).includes\\('zenn'\\)\\)\\)\")",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/data/links.tsx)",
+      "Bash(git -C /Users/yuu0413/projects/private/portfolio add src/components/awards.tsx)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git remote *)"
+    ],
+    "additionalDirectories": [
+      "/Users/yuu0413/projects/private/portfolio/src/assets"
+    ]
+  }
+}
