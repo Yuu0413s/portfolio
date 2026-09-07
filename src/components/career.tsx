@@ -29,6 +29,13 @@ const careerData = [
         type: 'work',
         active: false,
     },
+    {
+        date: '2026/09 ~ 現在',
+        title: '株式会社マイクロニティ',
+        description: 'AI推進室所属 AIビルダー（インターン）',
+        type: 'work',
+        active: true,
+    }
 ];
 
 const CareerSection = () => {
