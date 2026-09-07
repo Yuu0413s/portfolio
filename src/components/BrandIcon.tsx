@@ -7,12 +7,12 @@ type BrandIconProps = {
 
 const BrandIcon = ({ icon, size = 16 }: BrandIconProps) => (
     <svg
-        role="img"
+        aria-hidden="true"
+        focusable="false"
         viewBox="0 0 24 24"
         width={size}
         height={size}
         fill="currentColor"
-        aria-label={icon.title}
         style={{ flexShrink: 0 }}
     >
         <path d={icon.path} />

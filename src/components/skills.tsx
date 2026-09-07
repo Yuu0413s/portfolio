@@ -12,7 +12,16 @@ import {
 } from 'simple-icons';
 import BrandIcon from './BrandIcon';
 
-const keywordIcons: Record<string, SimpleIcon> = {
+type Keyword =
+    | "React" | "Next.js" | "Hono" | "Node.js" | "Bun" | "React Native" | "Expo Router" | "Vite"
+    | "Mantine UI" | "Turborepo" | "Drizzle ORM" | "Better Auth" | "Slack Bolt" | "HTML/CSS"
+    | "Flask" | "pandas" | "numpy" | "scikit-learn" | "LightGBM"
+    | "Workers" | "D1" | "R2" | "Vectorize"
+    | "Git" | "GitHub" | "Pull Request" | "コードレビュー"
+    | "PostgreSQL" | "SQLite" | "Neon" | "Supabase" | "Convex"
+    | "ノーコード/ローコード" | "LaTeX" | "Docker" | "Azure OpenAI" | "Azure AI Search" | "Gemini Embedding API" | "Google Maps API";
+
+const keywordIcons: Partial<Record<Keyword, SimpleIcon>> = {
     'React': siReact,
     'React Native': siReact,
     'Next.js': siNextdotjs,
@@ -53,7 +62,7 @@ type Skill = {
     name: string;
     description: string;
     icon: React.ReactNode;
-    keywords: string[];
+    keywords: Keyword[];
 };
 
 const skills: Skill[] = [
@@ -103,7 +112,7 @@ const skills: Skill[] = [
 const SkillsSection = () => {
     return (
         <Stack component="section" gap="lg">
-            <Text size="xs" c="var(--color-text-label)" style={{ letterSpacing: '0.08em' }}>
+            <Text component="h2" size="xs" c="var(--color-text-label)" style={{ letterSpacing: '0.08em' }}>
                 SKILLS
             </Text>
 
