@@ -3,6 +3,8 @@ import { IconBriefcase } from '@tabler/icons-react';
 import React from 'react';
 
 import LITALICOWonder from "../contents/interns/litalico-wonder";
+import AIConsulting from "../contents/interns/ai-consulting";
+import Micronity from "../contents/interns/micronity";
 
 type Internship = {
     slug: string;
@@ -28,6 +30,15 @@ export const INTERNSHIP_LIST: Internship[] = [
         internshipTitle: "株式会社A.I Consulting",
         period: "2025年12月 ~ 2026年4月",
         description: "フルスタックエンジニア（バックエンド中心）として、様々な開発を行っている。",
+        component: AIConsulting,
+    },
+    {
+        slug: "micronity",
+        companyName: "株式会社マイクロニティ",
+        internshipTitle: "AI推進室所属 AIビルダー",
+        period: "2026年9月 ~ 現在",
+        description: "AI推進室に所属し、AIビルダーとして活動。",
+        component: Micronity,
     },
 ];
 
