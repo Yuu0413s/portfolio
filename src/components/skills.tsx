@@ -1,190 +1,159 @@
-import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Divider } from '@mantine/core';
-import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker, IconBrandGit, IconBrandAzure, IconBrandSupabase, IconBrandNodejs, IconFileText, IconBrandCloudflare, IconBrandGoogleMaps, IconShieldCheck, IconStack, IconBolt, IconRoute } from '@tabler/icons-react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { Stack, Text, Accordion, Badge, Group } from '@mantine/core';
+import type { SimpleIcon } from 'simple-icons';
+import {
+    siJavascript, siTypescript, siPython, siCloudflare, siGithub, siPostgresql, siDocker,
+    siReact, siNextdotjs, siHono, siNodedotjs, siBun, siExpo, siVite,
+    siMantine, siTurborepo, siDrizzle, siBetterauth, siHtml5,
+    siFlask, siPandas, siNumpy, siScikitlearn,
+    siCloudflareworkers,
+    siGit,
+    siSqlite, siNeon, siSupabase, siConvex,
+    siLatex, siGooglegemini, siGooglemaps,
+} from 'simple-icons';
+import BrandIcon from './BrandIcon';
 
-type SkillUsage = 'team' | 'personal' | 'learning';
-
-const usageLabels: Record<SkillUsage, string> = {
-    team: 'チーム開発で使用',
-    personal: '個人開発で使用',
-    learning: '学習中',
+const keywordIcons: Record<string, SimpleIcon> = {
+    'React': siReact,
+    'React Native': siReact,
+    'Next.js': siNextdotjs,
+    'Hono': siHono,
+    'Node.js': siNodedotjs,
+    'Bun': siBun,
+    'Expo Router': siExpo,
+    'Vite': siVite,
+    'Mantine UI': siMantine,
+    'Turborepo': siTurborepo,
+    'Drizzle ORM': siDrizzle,
+    'Better Auth': siBetterauth,
+    'HTML/CSS': siHtml5,
+    'Flask': siFlask,
+    'pandas': siPandas,
+    'numpy': siNumpy,
+    'scikit-learn': siScikitlearn,
+    'Workers': siCloudflareworkers,
+    'D1': siCloudflare,
+    'R2': siCloudflare,
+    'Vectorize': siCloudflare,
+    'Git': siGit,
+    'GitHub': siGithub,
+    'Pull Request': siGithub,
+    'コードレビュー': siGithub,
+    'PostgreSQL': siPostgresql,
+    'SQLite': siSqlite,
+    'Neon': siNeon,
+    'Supabase': siSupabase,
+    'Convex': siConvex,
+    'Docker': siDocker,
+    'LaTeX': siLatex,
+    'Gemini Embedding API': siGooglegemini,
+    'Google Maps API': siGooglemaps,
 };
 
-const usageOrder: SkillUsage[] = ['team', 'personal', 'learning'];
+type Skill = {
+    name: string;
+    description: string;
+    icon: React.ReactNode;
+    keywords: string[];
+};
 
-const mainSkills: { name: string; usage: SkillUsage; description: string; icon: React.ReactNode }[] = [
+const skills: Skill[] = [
     {
-        name: "Cloudflare Workers",
-        usage: "personal",
-        description: "小説検索＆推薦システムのバックエンドをCloudflare Workers + D1 + Vectorizeで構築",
-        icon: <IconServer size={28} />,
-    },
-    {
-        name: "API設計・統合",
-        usage: "personal",
-        description: "5種類の外部APIを統合し、リトライ・指数バックオフによる堅牢な通信処理を実装",
-        icon: <IconPlug size={28} />,
-    },
-    {
-        name: "ベクトル検索",
-        usage: "learning",
-        description: "Gemini Embedding APIで768次元ベクトルを生成しCloudflare Vectorizeでセマンティック検索を実装",
-        icon: <IconSearch size={28} />,
-    },
-    {
-        name: "JavaScript/TypeScript",
-        usage: "team",
-        description: "React + Viteでのポートフォリオ・Webアプリ開発、React Nativeによるスマホ開発、Honoによるバックエンド開発（API作成・テスト作成と実行）の経験あり",
+        name: "JavaScript / TypeScript",
+        description: "Reactを使用したフロントエンド開発からNext.js, Honoを使用したバックエンド開発まで幅広く経験し、学習中",
         icon: (
             <Group gap={4}>
-                <IconBrandJavascript size={22} />
-                <IconBrandTypescript size={22} />
+                <BrandIcon icon={siJavascript} size={16} />
+                <BrandIcon icon={siTypescript} size={16} />
             </Group>
         ),
+        keywords: ["React", "Next.js", "Hono", "Node.js", "Bun", "React Native", "Expo Router", "Vite", "Mantine UI", "Turborepo", "Drizzle ORM", "Better Auth", "Slack Bolt", "HTML/CSS"],
     },
     {
         name: "Python",
-        usage: "team",
-        description: "pandasでのデータ分析・機械学習モデル構築経験あり",
-        icon: <IconBrandPython size={28} />,
+        description: "Flaskを使用したweb開発から、sklearnやnumpy, pandasを使用したデータ分析の基礎を学習中",
+        icon: <BrandIcon icon={siPython} size={20} />,
+        keywords: ["Flask", "pandas", "numpy", "scikit-learn", "LightGBM"],
     },
     {
-        name: "HTML/CSS",
-        usage: "team",
-        description: "Mantine UIを使ったレスポンシブWebアプリ開発経験あり",
-        icon: <IconBrandHtml5 size={28} />,
-    },
-    {
-        name: "Convex",
-        usage: "learning",
-        description: "MyFitCoachのバックエンドをConvexで実装（初めてのBaaS活用）",
-        icon: <IconDatabase size={28} />,
-    },
-    {
-        name: "Slack Bot開発",
-        usage: "personal",
-        description: "先輩後輩マッチングBotをTypeScript（Slack Bolt）で開発・運用",
-        icon: <IconBrandSlack size={28} />,
+        name: "Cloudflare",
+        description: "workersを使用したwebサイトのdeployや、D1を用いたデータベース管理を行っている。",
+        icon: <BrandIcon icon={siCloudflare} size={20} />,
+        keywords: ["Workers", "D1", "R2", "Vectorize"],
     },
     {
         name: "Git / GitHub",
-        usage: "team",
-        description: "個人・チーム開発でのブランチ管理・PR・コードレビューを日常的に実施",
-        icon: <IconBrandGit size={28} />,
+        description: "個人・チーム開発でのブランチ管理、Pull Request、コードレビューを日常的に実施",
+        icon: <BrandIcon icon={siGithub} size={20} />,
+        keywords: ["Git", "GitHub", "Pull Request", "コードレビュー"],
+    },
+    {
+        name: "SQL",
+        description: "D1やPostgreSQLを用いたテーブル設計・クエリ作成を行っており、学習中",
+        icon: <BrandIcon icon={siPostgresql} size={20} />,
+        keywords: ["PostgreSQL", "SQLite", "D1", "Neon", "Supabase", "Convex"],
+    },
+    {
+        name: "その他",
+        description: "ノーコード/ローコードツールを使用したwebサイトのプロトタイプ作成やLaTeXを使用した論文作成など、下記の技術について触れたことがあるまたは学習中です",
+        icon: <BrandIcon icon={siDocker} size={20} />,
+        keywords: ["ノーコード/ローコード", "LaTeX", "Docker", "Azure OpenAI", "Azure AI Search", "Gemini Embedding API", "Google Maps API"],
     },
 ];
 
-const learningSkills = [
-    { name: "SQL", icon: <IconDatabase size={14} /> },
-    { name: "Next.js", icon: <IconBrandNextjs size={14} /> },
-    { name: "ローコード/ノーコード", icon: <IconWand size={14} /> },
-    { name: "PostgreSQL", icon: <IconDatabase size={14} /> },
-    { name: "Docker", icon: <IconBrandDocker size={14} /> },
-    { name: "Azure OpenAI", icon: <IconBrandAzure size={14} /> },
-    { name: "Azure AI Search", icon: <IconBrandAzure size={14} /> },
-    { name: "Expo Router", icon: <IconRoute size={14} /> },
-    { name: "pandas", icon: <IconBrandPython size={14} /> },
-    { name: "scikit-learn", icon: <IconBrandPython size={14} /> },
-    { name: "LightGBM", icon: <IconBrandPython size={14} /> },
-    { name: "Supabase", icon: <IconBrandSupabase size={14} /> },
-    { name: "Node.js", icon: <IconBrandNodejs size={14} /> },
-    { name: "LaTeX", icon: <IconFileText size={14} /> },
-    { name: "Drizzle ORM", icon: <IconDatabase size={14} /> },
-    { name: "Neon", icon: <IconDatabase size={14} /> },
-    { name: "Better Auth", icon: <IconShieldCheck size={14} /> },
-    { name: "Cloudflare R2", icon: <IconBrandCloudflare size={14} /> },
-    { name: "Google Maps API", icon: <IconBrandGoogleMaps size={14} /> },
-    { name: "Turborepo", icon: <IconStack size={14} /> },
-    { name: "Bun", icon: <IconBolt size={14} /> },
-];
-
-const SkillCard = ({ skill, index }: { skill: typeof mainSkills[0]; index: number }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
-
-    return (
-        <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
-            <Card
-                component="li"
-                padding="lg"
-                radius="sm"
-                withBorder
-                className="custom-card"
-                style={{ height: '100%' }}
-            >
-                <Group gap="md" align="flex-start" wrap="nowrap">
-                    <ThemeIcon
-                        size={50}
-                        radius="md"
-                        variant="default"
-                        style={{ flexShrink: 0 }}
-                    >
-                        {skill.icon}
-                    </ThemeIcon>
-                    <Title order={3} size="h4" style={{ flex: 1, minWidth: 0 }}>{skill.name}</Title>
-                </Group>
-
-                <Text c="dimmed" mt="md" size="sm">{skill.description}</Text>
-            </Card>
-        </motion.div>
-    );
-};
-
 const SkillsSection = () => {
     return (
-        <Stack component="section" align="center" gap="lg">
-            <Title order={2}>
-                スキル
-            </Title>
+        <Stack component="section" gap="lg">
+            <Text size="xs" c="var(--color-text-label)" style={{ letterSpacing: '0.08em' }}>
+                SKILLS
+            </Text>
 
-            {usageOrder.map((usage) => {
-                const skills = mainSkills.filter((skill) => skill.usage === usage);
-                if (skills.length === 0) return null;
+            <Accordion
+                multiple
+                variant="separated"
+                radius="sm"
+                chevronPosition="right"
+                w="100%"
+                styles={{
+                    item: {
+                        border: '1px solid var(--color-border)',
+                        backgroundColor: 'var(--color-bg-surface)',
+                    },
+                }}
+            >
+                {skills.map((skill) => (
+                    <Accordion.Item key={skill.name} value={skill.name}>
+                        <Accordion.Control icon={skill.icon}>
+                            <Text fw={500} size="sm">{skill.name}</Text>
+                        </Accordion.Control>
 
-                return (
-                    <Stack key={usage} gap="md" w="100%" align="flex-start">
-                        <Text size="xs" c="var(--color-text-label)" style={{ letterSpacing: '0.08em' }}>
-                            {usageLabels[usage]}
-                        </Text>
+                        <Accordion.Panel>
+                            <Text size="sm" c="var(--color-text-secondary)" mb="md">
+                                {skill.description}
+                            </Text>
 
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                            gap: '1rem',
-                            width: '100%',
-                            listStyle: 'none',
-                            padding: 0,
-                            alignItems: 'stretch',
-                        }}>
-                            {skills.map((skill, index) => (
-                                <SkillCard key={skill.name} skill={skill} index={index} />
-                            ))}
-                        </div>
-                    </Stack>
-                );
-            })}
+                            <Text size="xs" fw={500} mb="xs">Keywords</Text>
 
-            <Divider w="100%" label="学習中" labelPosition="center" />
-
-            <Group gap="sm" justify="center">
-                {learningSkills.map((skill) => (
-                    <Badge
-                        key={skill.name}
-                        variant="outline"
-                        size="lg"
-                        radius="sm"
-                        leftSection={skill.icon}
-                    >
-                        {skill.name}
-                    </Badge>
+                            <Group gap="xs">
+                                {skill.keywords.map((keyword) => (
+                                    <Badge
+                                        key={keyword}
+                                        variant="outline"
+                                        size="sm"
+                                        radius="sm"
+                                        leftSection={
+                                            keywordIcons[keyword]
+                                                ? <BrandIcon icon={keywordIcons[keyword]} size={12} />
+                                                : <span aria-hidden="true">・</span>
+                                        }
+                                    >
+                                        {keyword}
+                                    </Badge>
+                                ))}
+                            </Group>
+                        </Accordion.Panel>
+                    </Accordion.Item>
                 ))}
-            </Group>
+            </Accordion>
         </Stack>
     );
 };
