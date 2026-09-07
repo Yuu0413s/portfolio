@@ -1,33 +1,40 @@
-import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Progress, Divider } from '@mantine/core';
+import { Stack, Title, Text, Card, Badge, Group, ThemeIcon, Divider } from '@mantine/core';
 import { IconBrandPython, IconDatabase, IconBrandHtml5, IconBrandJavascript, IconBrandTypescript, IconBrandNextjs, IconWand, IconServer, IconPlug, IconSearch, IconBrandSlack, IconBrandDocker, IconBrandGit, IconBrandAzure, IconBrandSupabase, IconBrandNodejs, IconFileText, IconBrandCloudflare, IconBrandGoogleMaps, IconShieldCheck, IconStack, IconBolt, IconRoute } from '@tabler/icons-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const mainSkills = [
+type SkillUsage = 'team' | 'personal' | 'learning';
+
+const usageLabels: Record<SkillUsage, string> = {
+    team: 'チーム開発で使用',
+    personal: '個人開発で使用',
+    learning: '学習中',
+};
+
+const usageOrder: SkillUsage[] = ['team', 'personal', 'learning'];
+
+const mainSkills: { name: string; usage: SkillUsage; description: string; icon: React.ReactNode }[] = [
     {
         name: "Cloudflare Workers",
-        level: 45,
+        usage: "personal",
         description: "小説検索＆推薦システムのバックエンドをCloudflare Workers + D1 + Vectorizeで構築",
         icon: <IconServer size={28} />,
-        color: "#F6821F",
     },
     {
         name: "API設計・統合",
-        level: 50,
+        usage: "personal",
         description: "5種類の外部APIを統合し、リトライ・指数バックオフによる堅牢な通信処理を実装",
         icon: <IconPlug size={28} />,
-        color: "#5C6BC0",
     },
     {
         name: "ベクトル検索",
-        level: 35,
+        usage: "learning",
         description: "Gemini Embedding APIで768次元ベクトルを生成しCloudflare Vectorizeでセマンティック検索を実装",
         icon: <IconSearch size={28} />,
-        color: "#9C27B0",
     },
     {
         name: "JavaScript/TypeScript",
-        level: 60,
+        usage: "team",
         description: "React + Viteでのポートフォリオ・Webアプリ開発、React Nativeによるスマホ開発、Honoによるバックエンド開発（API作成・テスト作成と実行）の経験あり",
         icon: (
             <Group gap={4}>
@@ -35,42 +42,36 @@ const mainSkills = [
                 <IconBrandTypescript size={22} />
             </Group>
         ),
-        color: "#3178C6",
     },
     {
         name: "Python",
-        level: 60,
+        usage: "team",
         description: "pandasでのデータ分析・機械学習モデル構築経験あり",
         icon: <IconBrandPython size={28} />,
-        color: "#3776AB",
     },
     {
         name: "HTML/CSS",
-        level: 60,
+        usage: "team",
         description: "Mantine UIを使ったレスポンシブWebアプリ開発経験あり",
         icon: <IconBrandHtml5 size={28} />,
-        color: "#E34F26",
     },
     {
         name: "Convex",
-        level: 35,
+        usage: "learning",
         description: "MyFitCoachのバックエンドをConvexで実装（初めてのBaaS活用）",
         icon: <IconDatabase size={28} />,
-        color: "#FF6154",
     },
     {
         name: "Slack Bot開発",
-        level: 40,
+        usage: "personal",
         description: "先輩後輩マッチングBotをTypeScript（Slack Bolt）で開発・運用",
         icon: <IconBrandSlack size={28} />,
-        color: "#36C5F0",
     },
     {
         name: "Git / GitHub",
-        level: 65,
+        usage: "team",
         description: "個人・チーム開発でのブランチ管理・PR・コードレビューを日常的に実施",
         icon: <IconBrandGit size={28} />,
-        color: "#F05032",
     },
 ];
 
@@ -111,41 +112,25 @@ const SkillCard = ({ skill, index }: { skill: typeof mainSkills[0]; index: numbe
         >
             <Card
                 component="li"
-                shadow="sm"
                 padding="lg"
-                radius="md"
+                radius="sm"
                 withBorder
                 className="custom-card"
                 style={{ height: '100%' }}
             >
-                <Group gap="md" align="center">
+                <Group gap="md" align="flex-start" wrap="nowrap">
                     <ThemeIcon
                         size={50}
                         radius="md"
-                        variant="light"
-                        color={skill.color}
+                        variant="default"
+                        style={{ flexShrink: 0 }}
                     >
                         {skill.icon}
                     </ThemeIcon>
-                    <Title order={3} size="h4">{skill.name}</Title>
+                    <Title order={3} size="h4" style={{ flex: 1, minWidth: 0 }}>{skill.name}</Title>
                 </Group>
 
                 <Text c="dimmed" mt="md" size="sm">{skill.description}</Text>
-
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: '100%' } : {}}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                    style={{ marginTop: '1rem' }}
-                >
-                    <Progress
-                        value={skill.level}
-                        color={skill.color}
-                        size="md"
-                        radius="xl"
-                        animated
-                    />
-                </motion.div>
             </Card>
         </motion.div>
     );
@@ -158,19 +143,32 @@ const SkillsSection = () => {
                 スキル
             </Title>
 
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1rem',
-                width: '100%',
-                listStyle: 'none',
-                padding: 0,
-                alignItems: 'stretch',
-            }}>
-                {mainSkills.map((skill, index) => (
-                    <SkillCard key={skill.name} skill={skill} index={index} />
-                ))}
-            </div>
+            {usageOrder.map((usage) => {
+                const skills = mainSkills.filter((skill) => skill.usage === usage);
+                if (skills.length === 0) return null;
+
+                return (
+                    <Stack key={usage} gap="md" w="100%" align="flex-start">
+                        <Text size="xs" c="var(--color-text-label)" style={{ letterSpacing: '0.08em' }}>
+                            {usageLabels[usage]}
+                        </Text>
+
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '1rem',
+                            width: '100%',
+                            listStyle: 'none',
+                            padding: 0,
+                            alignItems: 'stretch',
+                        }}>
+                            {skills.map((skill, index) => (
+                                <SkillCard key={skill.name} skill={skill} index={index} />
+                            ))}
+                        </div>
+                    </Stack>
+                );
+            })}
 
             <Divider w="100%" label="学習中" labelPosition="center" />
 
@@ -180,6 +178,7 @@ const SkillsSection = () => {
                         key={skill.name}
                         variant="outline"
                         size="lg"
+                        radius="sm"
                         leftSection={skill.icon}
                     >
                         {skill.name}

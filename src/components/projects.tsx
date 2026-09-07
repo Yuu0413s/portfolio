@@ -161,9 +161,8 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
 
     return (
         <Card
-            shadow="md"
             padding="lg"
-            radius="lg"
+            radius="sm"
             withBorder
             className="custom-card"
             w="100%"
@@ -172,7 +171,7 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
                 <Group justify="space-between" align="flex-start" wrap="nowrap">
                     <Group gap="md" style={{ flex: 1 }}>
                         <div style={{
-                            background: 'var(--gradient-primary)',
+                            background: 'var(--primary-color)',
                             padding: '12px',
                             borderRadius: '8px',
                             color: 'white',
@@ -193,24 +192,24 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
                 <Text size="sm">{project.description}</Text>
 
                 <Group gap="xs" wrap="wrap">
-                    <Badge variant="light" color="blue" size="sm">
+                    <Badge variant="outline" size="sm">
                         {project.role}
                     </Badge>
-                    <Badge variant="outline" color={project.type === 'team' ? 'teal' : 'grape'} size="sm">
+                    <Badge variant="outline" size="sm">
                         {project.type === 'team' ? 'チーム' : '個人'}
                     </Badge>
                 </Group>
 
                 <Group gap="xs" wrap="wrap">
                     {project.techStack.map((tech) => (
-                        <Badge key={tech} variant="dot" color="gray" size="sm">
+                        <Badge key={tech} variant="outline" size="sm">
                             {tech}
                         </Badge>
                     ))}
                 </Group>
 
                 {project.outcome && (
-                    <Badge variant="filled" color="yellow" size="sm" leftSection="🏆" style={{ alignSelf: 'flex-start' }}>
+                    <Badge variant="outline" size="sm" style={{ alignSelf: 'flex-start' }}>
                         {project.outcome}
                     </Badge>
                 )}
@@ -222,7 +221,7 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
                             href={project.siteUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            variant="light"
+                            variant="subtle"
                             color="blue"
                             size="xs"
                             leftSection={<IconExternalLink size={14} />}
@@ -236,7 +235,7 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            variant="light"
+                            variant="subtle"
                             color="gray"
                             size="xs"
                             leftSection={<IconBrandGithub size={14} />}
@@ -247,7 +246,7 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
                 </Group>
 
                 <Button
-                    variant="light"
+                    variant="subtle"
                     color="blue"
                     fullWidth
                     onClick={() => setOpened(!opened)}

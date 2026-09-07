@@ -17,22 +17,41 @@ import FadeInSection from './components/FadeInSection';
 import './styles.css';
 
 function App() {
-    const [opened, { toggle }] = useDisclosure();
+    const [mobileOpened, { toggle: toggleMobile }] = useDisclosure(false);
+    const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
 
     return (
         <AppShell
+            header={{ height: 56 }}
             navbar={{
                 width: 300,
                 breakpoint: 'sm',
-                collapsed: { desktop: !opened, mobile: !opened },
+                collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
             }}
             padding="md"
             styles={{
                 main: {
-                    background: 'var(--gradient-bg)',
+                    background: 'var(--color-bg-page)',
                 },
             }}
         >
+            <AppShell.Header
+                style={{
+                    background: 'var(--color-bg-surface)',
+                    borderBottom: '1px solid var(--color-border)',
+                }}
+            >
+                <Group justify="space-between" align="center" h="100%" px="md">
+                    <Group gap="md">
+                        <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" aria-label="メニューを開閉" />
+                        <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" aria-label="メニューを開閉" />
+                        <Title order={4} c="var(--color-text-primary)" style={{ fontWeight: 500 }}>
+                            Yuta Shibata
+                        </Title>
+                    </Group>
+                </Group>
+            </AppShell.Header>
+
             <AppShell.Navbar
                 p="md"
                 className="sidebar-styles"
@@ -42,53 +61,21 @@ function App() {
                 }}
             >
                 <Stack gap="md">
-                    {opened && (
-                        <Group justify="flex-end">
-                            <CloseButton
-                                onClick={toggle}
-                                size="lg"
-                                style={{
-                                    color: 'var(--white)',
-                                }}
-                                aria-label="メニューを閉じる"
-                            />
-                        </Group>
-                    )}
+                    <Group justify="flex-end" hiddenFrom="sm">
+                        <CloseButton
+                            onClick={toggleMobile}
+                            size="lg"
+                            style={{
+                                color: 'var(--white)',
+                            }}
+                            aria-label="メニューを閉じる"
+                        />
+                    </Group>
                     <Header />
                 </Stack>
             </AppShell.Navbar>
 
             <AppShell.Main>
-                <Group
-                    justify="space-between"
-                    align="center"
-                    p="md"
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        zIndex: 100,
-                        background: 'var(--color-header-bg)',
-                        backdropFilter: 'blur(10px)',
-                        borderBottom: '1px solid var(--color-border)',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-                    }}
-                >
-                    <Group gap="md">
-                        <Burger
-                            opened={opened}
-                            onClick={toggle}
-                            size="md"
-                        />
-                        <Title order={4} c="var(--primary-color)" style={{ fontWeight: 700 }}>
-                            Yuta Shibata
-                        </Title>
-                    </Group>
-                </Group>
-
-                <div style={{ paddingTop: '4rem' }}></div>
-
                 <Container size="md" py="lg" className="main-content-styles">
                     <Stack gap="xl">
                         <FadeInSection delay={0.1}>

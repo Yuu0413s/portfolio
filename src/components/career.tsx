@@ -45,8 +45,8 @@ const CareerSection = () => {
                         bullet={
                             <ThemeIcon
                                 size={32}
-                                variant="filled"
-                                radius="xl"
+                                variant="outline"
+                                radius="sm"
                                 color={item.type === 'education' ? 'blue' : 'teal'}
                             >
                                 {item.type === 'education' ? (

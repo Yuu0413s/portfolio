@@ -15,7 +15,7 @@ const Footer = () => {
             gap="lg"
             p="xl"
             style={{
-                background: 'linear-gradient(135deg, #2C3E50 0%, #34495E 100%)',
+                background: 'var(--sidebar-bg)',
                 color: 'var(--white)',
                 marginTop: '4rem',
             }}
@@ -45,7 +45,7 @@ const Footer = () => {
                                 >
                                     <ThemeIcon
                                         size={36}
-                                        radius="md"
+                                        radius="sm"
                                         variant="light"
                                         color={link.color}
                                     >
@@ -92,15 +92,13 @@ const Footer = () => {
 
                 <ActionIcon
                     size="xl"
-                    radius="xl"
-                    variant="gradient"
-                    gradient={{ from: 'blue', to: 'cyan' }}
+                    radius="sm"
+                    variant="subtle"
                     onClick={scrollToTop}
                     style={{
                         position: 'fixed',
                         bottom: '2rem',
                         right: '2rem',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
                         zIndex: 1000,
                     }}
                     aria-label="トップへ戻る"
