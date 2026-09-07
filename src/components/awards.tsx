@@ -55,28 +55,26 @@ const AwardSection = () => {
                 {awardsData.map((award, index) => (
                     <Card
                         key={index}
-                        shadow="md"
                         padding="xl"
-                        radius="lg"
+                        radius="sm"
                         withBorder
                         className="custom-card"
                         style={{
-                            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--color-bg-surface) 100%)',
+                            background: 'var(--color-bg-surface)',
                         }}
                     >
                         <Stack gap="sm">
                             <Group gap="sm" align="center" wrap="nowrap">
                                 <ThemeIcon
                                     size={44}
-                                    radius="xl"
-                                    variant="gradient"
-                                    gradient={{ from: 'yellow', to: 'orange' }}
+                                    radius="sm"
+                                    variant="outline"
                                     style={{ flexShrink: 0 }}
                                 >
                                     <IconTrophy size={24} />
                                 </ThemeIcon>
                                 <Title order={3} size="h3" style={{ flex: 1 }}>{award.awardName}</Title>
-                                <Badge variant="light" color="yellow" size="sm" style={{ flexShrink: 0 }}>
+                                <Badge variant="light" size="sm" style={{ flexShrink: 0 }}>
                                     <IconAward size={10} style={{ marginRight: 4 }} />
                                     受賞
                                 </Badge>

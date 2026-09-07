@@ -50,9 +50,8 @@ const Interns = () => {
                 return (
                     <Card
                         key={internship.slug}
-                        shadow="md"
                         padding="xl"
-                        radius="lg"
+                        radius="sm"
                         withBorder
                         className="custom-card"
                         w="100%"
@@ -62,8 +61,7 @@ const Interns = () => {
                                 <ThemeIcon
                                     size={50}
                                     radius="md"
-                                    variant="gradient"
-                                    gradient={{ from: 'teal', to: 'cyan' }}
+                                    variant="default"
                                 >
                                     <IconBriefcase size={28} />
                                 </ThemeIcon>
@@ -72,7 +70,7 @@ const Interns = () => {
                                     <Title order={3} size="h4">{internship.internshipTitle}</Title>
                                     <Text fw={700} c="blue">{internship.companyName}</Text>
                                     <Group gap="xs">
-                                        <Badge variant="light" color="teal">
+                                        <Badge variant="light">
                                             {internship.period}
                                         </Badge>
                                     </Group>

@@ -90,9 +90,8 @@ const BlogSection = () => {
                     {posts.map((post, index) => (
                         <Card
                             key={index}
-                            shadow="md"
                             padding="lg"
-                            radius="lg"
+                            radius="sm"
                             withBorder
                             className="custom-card"
                         >
@@ -131,8 +130,7 @@ const BlogSection = () => {
                 href="https://note.com/yuu_0413"
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="gradient"
-                gradient={{ from: 'violet', to: 'grape' }}
+                variant="subtle"
                 size="lg"
                 leftSection={<IconNotebook size={20} />}
                 rightSection={<IconExternalLink size={20} />}
